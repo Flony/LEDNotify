@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_reset"
+        android:title="Reset"
+        android:icon="@android:drawable/ic_menu_revert"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_aodiode_preview"
+        android:title="AODiode Preview"
+        app:showAsAction="always" />
+</menu>
