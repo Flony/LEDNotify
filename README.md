@@ -63,7 +63,7 @@ Optimized for all Android devices running **Android 8.1 (API 27) up to Android 1
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/LEDNotify.git
+   git clone https://github.com/Flony/LEDNotify.git
    ```
 2. Open the project in **Android Studio (Ladybug / 2024.2+)**.
 3. Build the debug APK using Gradle:
