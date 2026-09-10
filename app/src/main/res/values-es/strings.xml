@@ -18,6 +18,9 @@
     <string name="perm_subtitle">Para garantizar que LED Notify funcione correctamente, conceda los siguientes permisos:</string>
     <string name="btn_perm_notif">1. Conceder acceso a notificaciones</string>
     <string name="btn_perm_overlay">2. Mostrar sobre otras aplicaciones</string>
+    <string name="btn_perm_oem">3. Permisos adicionales</string>
+    <string name="desc_perm_oem">💡 Si la aplicación aún no funciona correctamente, intente habilitar estos permisos adicionales (p. ej., "Mostrar en pantalla de bloqueo", "Inicio automático").</string>
+    <string name="status_oem_recommended">⚠️ %s (Recomendado para su dispositivo)</string>
     <string name="btn_continue">Continuar</string>
     <string name="lang_title">Idioma de la aplicación</string>
     <string name="lang_system">Idioma del sistema</string>

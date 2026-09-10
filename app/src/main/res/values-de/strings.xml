@@ -18,6 +18,9 @@
     <string name="perm_subtitle">Damit LED Notify korrekt funktioniert und bei eingehenden Benachrichtigungen den Ring aufleuchten lässt, erteilen Sie bitte folgende Berechtigungen:</string>
     <string name="btn_perm_notif">1. Benachrichtigungszugriff erlauben</string>
     <string name="btn_perm_overlay">2. Über andere Apps einblenden</string>
+    <string name="btn_perm_oem">3. Zusätzliche Berechtigungen</string>
+    <string name="desc_perm_oem">💡 Wenn die App nicht ordnungsgemäß funktioniert, versuchen Sie, diese zusätzlichen Berechtigungen zu aktivieren (z. B. "Auf Sperrbildschirm anzeigen", "Autostart").</string>
+    <string name="status_oem_recommended">⚠️ %s (Für Ihr Gerät empfohlen)</string>
     <string name="btn_continue">Zur App fortfahren</string>
     <string name="lang_title">App-Sprache</string>
     <string name="lang_system">Systemstandard</string>

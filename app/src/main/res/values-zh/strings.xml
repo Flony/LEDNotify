@@ -18,6 +18,9 @@
     <string name="perm_subtitle">为确保 LED Notify 正常工作并在收到通知时亮起圆环，请授予以下权限：</string>
     <string name="btn_perm_notif">1. 授予通知访问权限</string>
     <string name="btn_perm_overlay">2. 授予悬浮窗权限</string>
+    <string name="btn_perm_oem">3. 其他权限设置</string>
+    <string name="desc_perm_oem">💡 如果应用仍无法正常工作或无法在锁屏显示，请尝试开启这些系统附加权限（如"锁屏显示"、"后台弹出界面"、"自启动"）。</string>
+    <string name="status_oem_recommended">⚠️ %s（针对您的设备建议开启）</string>
     <string name="lang_title">应用语言</string>
     <string name="lang_system">系统默认</string>
     <string name="lang_czech">Čeština</string>

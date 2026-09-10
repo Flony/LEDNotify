@@ -4,6 +4,7 @@ import android.content.ComponentName
 import android.content.Intent
 import android.graphics.Typeface
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.HapticFeedbackConstants
@@ -25,6 +26,7 @@ class PermissionSetupActivity : AppCompatActivity() {
 
     private lateinit var statusNotification: TextView
     private lateinit var statusOverlay: TextView
+    private lateinit var btnOemPermission: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,6 +83,35 @@ class PermissionSetupActivity : AppCompatActivity() {
                         Uri.parse("package:$packageName")
                     )
                     startActivity(intent)
+                }
+            }
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { setMargins(0, 8, 0, 24) }
+        }
+
+        val descOem = TextView(this).apply {
+            text = getString(R.string.desc_perm_oem)
+            textSize = 13f
+            setPadding(0, 0, 0, 8)
+        }
+
+        btnOemPermission = Button(this).apply {
+            text = getString(R.string.btn_perm_oem)
+            setOnClickListener {
+                val miuiIntent = Intent("miui.intent.action.APP_PERM_EDITOR").apply {
+                    setClassName("com.miui.securitycenter", "com.miui.permcenter.permissions.PermissionsEditorActivity")
+                    putExtra("extra_pkgname", packageName)
+                }
+                try {
+                    startActivity(miuiIntent)
+                } catch (_: Exception) {
+                    val appInfoIntent = Intent(
+                        Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                        Uri.parse("package:$packageName")
+                    )
+                    startActivity(appInfoIntent)
                 }
             }
             layoutParams = LinearLayout.LayoutParams(
@@ -154,6 +185,8 @@ class PermissionSetupActivity : AppCompatActivity() {
         layout.addView(btnNotification)
         layout.addView(statusOverlay)
         layout.addView(btnOverlay)
+        layout.addView(descOem)
+        layout.addView(btnOemPermission)
         layout.addView(labelLang)
         layout.addView(radioGroupLang)
         layout.addView(btnContinue)
@@ -175,6 +208,20 @@ class PermissionSetupActivity : AppCompatActivity() {
 
         statusNotification.text = if (notifGranted) getString(R.string.status_notif_granted) else getString(R.string.status_notif_denied)
         statusOverlay.text = if (overlayGranted) getString(R.string.status_overlay_granted) else getString(R.string.status_overlay_denied)
+
+        val m = (Build.MANUFACTURER ?: "").lowercase()
+        val b = (Build.BRAND ?: "").lowercase()
+        val isCustomOem = m.contains("xiaomi") || m.contains("redmi") || m.contains("poco") ||
+                m.contains("honor") || m.contains("huawei") || m.contains("oppo") ||
+                m.contains("vivo") || m.contains("realme") || m.contains("oneplus") ||
+                b.contains("xiaomi") || b.contains("redmi") || b.contains("poco") ||
+                b.contains("honor") || b.contains("huawei")
+
+        if (isCustomOem && notifGranted && overlayGranted) {
+            btnOemPermission.text = getString(R.string.status_oem_recommended, getString(R.string.btn_perm_oem))
+        } else {
+            btnOemPermission.text = getString(R.string.btn_perm_oem)
+        }
     }
 
     private fun isNotificationServiceEnabled(): Boolean {

@@ -18,6 +18,9 @@
     <string name="perm_subtitle">Aby LED Notify správně fungovalo a dokázalo rozsvítit kroužek při příchozích notifikacích, je nutné povolit následující oprávnění:</string>
     <string name="btn_perm_notif">1. Povolit přístup k oznámením</string>
     <string name="btn_perm_overlay">2. Povolit zobrazení přes jiné aplikace</string>
+    <string name="btn_perm_oem">3. Další oprávnění</string>
+    <string name="desc_perm_oem">💡 Pokud vám aplikace stále správně nefunguje nebo se nezobrazuje na zamčené obrazovce, zkuste povolit ještě tato systémová oprávnění (např. "Zobrazit na zamčené obrazovce", "Vyskakovací okna na pozadí", "Automatické spuštění").</string>
+    <string name="status_oem_recommended">⚠️ %s (Doporučeno pro vaše zařízení)</string>
     <string name="btn_continue">Pokračovat do aplikace</string>
     <string name="lang_title">Jazyk aplikace (Language)</string>
     <string name="lang_system">Systémový jazyk</string>

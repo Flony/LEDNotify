@@ -228,7 +228,7 @@ class LedNotificationListener : NotificationListenerService() {
         val isEco1Hz = prefs.getBoolean("pref_eco_1hz", false)
 
         val intent = Intent(this, LedActivity::class.java).apply {
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
             putExtra("AOD_COLOR", ledColor)
             putExtra("AOD_SHAPE_TYPE", shapeType)
             putExtra("AOD_RADIUS", radius)

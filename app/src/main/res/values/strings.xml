@@ -18,6 +18,9 @@
     <string name="perm_subtitle">To ensure LED Notify works correctly and lights up the ring on incoming notifications, please grant the following permissions:</string>
     <string name="btn_perm_notif">1. Grant Notification Access</string>
     <string name="btn_perm_overlay">2. Grant Display Over Other Apps</string>
+    <string name="btn_perm_oem">3. Additional Permissions</string>
+    <string name="desc_perm_oem">💡 If the app still does not work properly or fails to show on the lock screen, try enabling these additional system permissions (e.g. "Display on Lock screen", "Display pop-up windows in background", "Autostart").</string>
+    <string name="status_oem_recommended">⚠️ %s (Recommended for your device)</string>
     <string name="btn_continue">Continue to App</string>
     <string name="lang_title">App Language</string>
     <string name="lang_system">System Default</string>

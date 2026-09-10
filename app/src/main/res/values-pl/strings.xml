@@ -18,6 +18,9 @@
     <string name="perm_subtitle">Aby LED Notify działało poprawnie i podświetlało pierścień przy powiadomieniach, przyznaj następujące uprawnienia:</string>
     <string name="btn_perm_notif">1. Zezwól na dostęp do powiadomień</string>
     <string name="btn_perm_overlay">2. Zezwól na wyświetlanie nad innymi aplikacjami</string>
+    <string name="btn_perm_oem">3. Dodatkowe uprawnienia</string>
+    <string name="desc_perm_oem">💡 Jeśli aplikacja nadal nie działa prawidłowo, spróbuj włączyć te dodatkowe uprawnienia systemowe (np. "Wyświetlaj na ekranie blokady", "Autostart").</string>
+    <string name="status_oem_recommended">⚠️ %s (Zalecane dla Twojego urządzenia)</string>
     <string name="btn_continue">Przejdź do aplikacji</string>
     <string name="lang_title">Język aplikacji</string>
     <string name="lang_system">Język systemu</string>
