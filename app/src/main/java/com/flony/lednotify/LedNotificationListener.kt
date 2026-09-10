@@ -30,7 +30,7 @@ class LedNotificationListener : NotificationListenerService() {
             if (!appEnabled || !chargingLedEnabled) return
 
             val pm = getSystemService(POWER_SERVICE) as PowerManager
-            if (action == Intent.ACTION_POWER_CONNECTED || action == Intent.ACTION_BATTERY_CHANGED) {
+            if (action == Intent.ACTION_POWER_CONNECTED) {
                 if (!pm.isInteractive) {
                     val batteryStatus: Intent? = context?.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
                     val status = batteryStatus?.getIntExtra(BatteryManager.EXTRA_STATUS, -1) ?: -1
@@ -59,7 +59,6 @@ class LedNotificationListener : NotificationListenerService() {
         val filter = IntentFilter().apply {
             addAction(Intent.ACTION_POWER_CONNECTED)
             addAction(Intent.ACTION_POWER_DISCONNECTED)
-            addAction(Intent.ACTION_BATTERY_CHANGED)
         }
         registerReceiver(batteryReceiver, filter)
     }
@@ -74,16 +73,22 @@ class LedNotificationListener : NotificationListenerService() {
     override fun onNotificationPosted(sbn: StatusBarNotification?) {
         sbn ?: return
 
-        // Ignorovat probíhající/trvalé notifikace (přehrávač hudby, stahování)
+        // 1. Rychlé ignorování probíhajících/trvalých notifikací (přehrávač hudby, stahování)
         if (sbn.isOngoing) return
 
         val flags = sbn.notification.flags
         if ((flags and Notification.FLAG_FOREGROUND_SERVICE) != 0) return
 
+        // 2. Okamžitý návrat, pokud je obrazovka aktivní (uživatel mobil používá)
+        val pm = getSystemService(POWER_SERVICE) as PowerManager
+        if (pm.isInteractive) return
+
+        // 3. Kontrola zapnutí aplikace
         val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
         val appEnabled = prefs.getBoolean("pref_app_enabled", true)
         if (!appEnabled) return
 
+        // 4. Kontrola Whitelistu / Blacklistu
         val blacklistedPkgs = prefs.getStringSet("pref_blacklisted_pkgs", emptySet()) ?: emptySet()
         val pkg = sbn.packageName
 
@@ -91,12 +96,11 @@ class LedNotificationListener : NotificationListenerService() {
         if ((pkg.contains("dialer") || pkg.contains("phone") || pkg.contains("telecom")) && blacklistedPkgs.contains("system_calls")) return
         if ((pkg.contains("mms") || pkg.contains("messaging") || pkg.contains("sms")) && blacklistedPkgs.contains("system_sms")) return
 
-        // Spustit pouze pokud je obrazovka v danou chvíli zhasnutá a nejsou aktivní omezení
-        val pm = getSystemService(POWER_SERVICE) as PowerManager
-        if (!pm.isInteractive) {
-            if (isBatteryTooLow() || isInQuietHours() || isSystemDndActive()) return
-            checkProximityAndStartLed(sbn)
-        }
+        // 5. Omezení baterie, DND a tichých hodin
+        if (isBatteryTooLow() || isInQuietHours() || isSystemDndActive()) return
+
+        // 6. Kontrola senzoru přiblížení a spuštění LED
+        checkProximityAndStartLed(sbn)
     }
 
     private fun isBatteryTooLow(): Boolean {

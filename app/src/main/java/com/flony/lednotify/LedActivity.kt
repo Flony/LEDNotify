@@ -10,7 +10,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.os.PowerManager
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -22,7 +21,6 @@ class LedActivity : AppCompatActivity() {
 
     private lateinit var ledView: LedView
     private val handler = Handler(Looper.getMainLooper())
-    private var wakeLock: PowerManager.WakeLock? = null
     private var timeoutRunnable: Runnable? = null
 
     // Pixel-shift interval: 60 sekund
@@ -52,22 +50,9 @@ class LedActivity : AppCompatActivity() {
     private val screenOffReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent?.action == Intent.ACTION_SCREEN_OFF) {
-                wakeUpLockscreen()
                 finish()
             }
         }
-    }
-
-    private fun wakeUpLockscreen() {
-        try {
-            val powerManager = getSystemService(POWER_SERVICE) as PowerManager
-            @Suppress("DEPRECATION")
-            val wl = powerManager.newWakeLock(
-                PowerManager.FULL_WAKE_LOCK or PowerManager.ACQUIRE_CAUSES_WAKEUP or PowerManager.ON_AFTER_RELEASE,
-                "LEDNotify:WakeLockscreen"
-            )
-            wl.acquire(1500L)
-        } catch (_: Exception) {}
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,7 +82,6 @@ class LedActivity : AppCompatActivity() {
         }
 
         setupLockscreenFlags()
-        acquireWakeLock()
 
         val brightness = intent.getIntExtra("AOD_BRIGHTNESS", 100)
         setupBrightness(brightness)
@@ -183,15 +167,6 @@ class LedActivity : AppCompatActivity() {
         }
     }
 
-    private fun acquireWakeLock() {
-        val powerManager = getSystemService(POWER_SERVICE) as PowerManager
-        @Suppress("DEPRECATION")
-        wakeLock = powerManager.newWakeLock(
-            PowerManager.SCREEN_BRIGHT_WAKE_LOCK or PowerManager.ACQUIRE_CAUSES_WAKEUP,
-            "LEDNotify:LedActivityWakeLock"
-        )
-    }
-
     override fun onResume() {
         super.onResume()
         // Pokud je zařízení již odemčené, okamžitě ukončit aktivitu
@@ -201,9 +176,6 @@ class LedActivity : AppCompatActivity() {
             return
         }
 
-        if (wakeLock?.isHeld == false) {
-            wakeLock?.acquire(30 * 60 * 1000L) // 30 minut bezpečnostní timeout
-        }
         handler.post(shiftRunnable)
 
         val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
@@ -222,11 +194,6 @@ class LedActivity : AppCompatActivity() {
         super.onPause()
         handler.removeCallbacks(shiftRunnable)
         timeoutRunnable?.let { handler.removeCallbacks(it) }
-        wakeLock?.let {
-            if (it.isHeld) {
-                it.release()
-            }
-        }
     }
 
     override fun finish() {

@@ -3,8 +3,8 @@
 # min_api: 27
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.2"}
-# pg_map_id: 5c32c06c3afca93d2fb246f573e13b6c17daf0caba2922a44a449c48f1ba03f4
-# pg_map_hash: SHA-256 5c32c06c3afca93d2fb246f573e13b6c17daf0caba2922a44a449c48f1ba03f4
+# pg_map_id: ed4fa53518d2b30fa87ef00c592c5713dbc27885a5afd06c9df69fe0c9c83085
+# pg_map_hash: SHA-256 ed4fa53518d2b30fa87ef00c592c5713dbc27885a5afd06c9df69fe0c9c83085
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -8406,26 +8406,30 @@ androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager$1 -> h3:
     27:33:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):28:28 -> onReceive
     34:45:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):29:29 -> onReceive
     46:56:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):32:32 -> onReceive
-    57:97:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):33:33 -> onReceive
-    98:106:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):34:34 -> onReceive
-    107:118:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):35:35 -> onReceive
-    119:134:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):36:36 -> onReceive
-    135:144:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):40:40 -> onReceive
-    145:157:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):41:41 -> onReceive
-    158:170:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):42:42 -> onReceive
-    171:174:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):44:44 -> onReceive
-    175:178:void com.flony.lednotify.LedNotificationListener.access$startChargingLed(com.flony.lednotify.LedNotificationListener,int):22:22 -> onReceive
-    175:178:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):45 -> onReceive
-    179:187:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):33:33 -> onReceive
-    188:193:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):49:49 -> onReceive
-    194:198:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):274:274 -> onReceive
-    199:203:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):275:275 -> onReceive
-    204:209:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):49:49 -> onReceive
-    210:215:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):275:275 -> onReceive
-    216:217:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):49:49 -> onReceive
-    218:223:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):50:50 -> onReceive
-    224:234:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):51:51 -> onReceive
-    235:240:void onReceive(android.content.Context,android.content.Intent):3633:3633 -> onReceive
+    57:58:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):33:33 -> onReceive
+    59:64:boolean kotlin.jvm.internal.Intrinsics.areEqual(java.lang.Object,java.lang.Object):169:169 -> onReceive
+    59:64:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):33 -> onReceive
+    65:73:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):34:34 -> onReceive
+    74:87:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):35:35 -> onReceive
+    88:103:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):36:36 -> onReceive
+    104:113:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):40:40 -> onReceive
+    114:126:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):41:41 -> onReceive
+    127:139:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):42:42 -> onReceive
+    140:143:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):44:44 -> onReceive
+    144:147:void com.flony.lednotify.LedNotificationListener.access$startChargingLed(com.flony.lednotify.LedNotificationListener,int):22:22 -> onReceive
+    144:147:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):45 -> onReceive
+    148:149:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):48:48 -> onReceive
+    150:155:boolean kotlin.jvm.internal.Intrinsics.areEqual(java.lang.Object,java.lang.Object):169:169 -> onReceive
+    150:155:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):48 -> onReceive
+    156:161:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):49:49 -> onReceive
+    162:166:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):278:278 -> onReceive
+    167:171:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):279:279 -> onReceive
+    172:177:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):49:49 -> onReceive
+    178:183:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):279:279 -> onReceive
+    184:185:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):49:49 -> onReceive
+    186:191:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):50:50 -> onReceive
+    192:202:void com.flony.lednotify.LedNotificationListener$batteryReceiver$1.onReceive(android.content.Context,android.content.Intent):51:51 -> onReceive
+    203:208:void onReceive(android.content.Context,android.content.Intent):3633:3633 -> onReceive
 androidx.appcompat.app.AppCompatDelegateImpl$ListMenuDecorView -> j3:
 # {"id":"sourceFile","fileName":"AppCompatDelegateImpl.java"}
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> i
@@ -25377,7 +25381,7 @@ androidx.core.app.ActivityCompat$$ExternalSyntheticLambda0 -> b1:
     41:43:void androidx.lifecycle.ProcessLifecycleOwner.delayedPauseRunnable$lambda$0(androidx.lifecycle.ProcessLifecycleOwner):57 -> run
     41:43:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
     44:47:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
-    48:51:void com.flony.lednotify.LedActivity.onResume$lambda$3(com.flony.lednotify.LedActivity):214:214 -> run
+    48:51:void com.flony.lednotify.LedActivity.onResume$lambda$3(com.flony.lednotify.LedActivity):186:186 -> run
     48:51:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
     52:54:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
     55:59:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():350:350 -> run
@@ -30760,14 +30764,14 @@ androidx.core.widget.AutoScrollHelper$ScrollAnimationRunnable -> u5:
     185:186:android.os.Handler com.flony.lednotify.PixelShiftAnimationView.access$getHandler$p(com.flony.lednotify.PixelShiftAnimationView):146:146 -> run
     185:186:void com.flony.lednotify.PixelShiftAnimationView$runnable$1.run():173 -> run
     187:190:void com.flony.lednotify.PixelShiftAnimationView$runnable$1.run():173:173 -> run
-    191:192:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():31:31 -> run
-    193:196:com.flony.lednotify.LedView com.flony.lednotify.LedActivity.access$getLedView$p(com.flony.lednotify.LedActivity):21:21 -> run
-    193:196:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():31 -> run
-    197:199:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():31:31 -> run
-    200:201:android.os.Handler com.flony.lednotify.LedActivity.access$getHandler$p(com.flony.lednotify.LedActivity):21:21 -> run
-    200:201:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():32 -> run
-    202:205:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():32:32 -> run
-    206:209:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():31:31 -> run
+    191:192:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():29:29 -> run
+    193:196:com.flony.lednotify.LedView com.flony.lednotify.LedActivity.access$getLedView$p(com.flony.lednotify.LedActivity):20:20 -> run
+    193:196:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():29 -> run
+    197:199:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():29:29 -> run
+    200:201:android.os.Handler com.flony.lednotify.LedActivity.access$getHandler$p(com.flony.lednotify.LedActivity):20:20 -> run
+    200:201:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():30 -> run
+    202:205:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():30:30 -> run
+    206:209:void com.flony.lednotify.LedActivity$shiftRunnable$1.run():29:29 -> run
     210:215:void androidx.fragment.app.FragmentManager$5.run():547:547 -> run
     216:219:void androidx.appcompat.widget.DropDownListView$ResolveHoverRunnable.run():721:721 -> run
     220:223:void androidx.appcompat.widget.DropDownListView$ResolveHoverRunnable.run():722:722 -> run
@@ -40051,7 +40055,7 @@ com.flony.lednotify.AppColorMappingActivity$$ExternalSyntheticLambda0 -> w1:
     20:23:void com.flony.lednotify.TestAODiodeActivity.onCreate$lambda$25$lambda$24(com.flony.lednotify.TestAODiodeActivity,android.view.View):332:332 -> onClick
     20:23:void AppColorMappingActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
     24:27:void AppColorMappingActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0:0 -> onClick
-    28:31:void com.flony.lednotify.LedActivity.onCreate$lambda$1(com.flony.lednotify.LedActivity,android.view.View):130:130 -> onClick
+    28:31:void com.flony.lednotify.LedActivity.onCreate$lambda$1(com.flony.lednotify.LedActivity,android.view.View):114:114 -> onClick
     28:31:void AppColorMappingActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
     32:36:void AppColorMappingActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0:0 -> onClick
     37:39:void com.flony.lednotify.AppFilterActivity.createAppFilterRow$lambda$32(kotlin.jvm.functions.Function0,android.view.View):260:260 -> onClick
@@ -40829,145 +40833,133 @@ com.flony.lednotify.DitheringAnimationView -> m8:
     76:86:void onDraw(android.graphics.Canvas):255:255 -> onDraw
 com.flony.lednotify.LedActivity -> com.flony.lednotify.LedActivity:
 # {"id":"sourceFile","fileName":"LedActivity.kt"}
-    java.lang.Runnable timeoutRunnable -> A
-      # {"id":"com.android.tools.r8.residualsignature","signature":"Lb1;"}
-    com.flony.lednotify.LedActivity$shiftRunnable$1 shiftRunnable -> B
+    com.flony.lednotify.LedActivity$shiftRunnable$1 shiftRunnable -> A
       # {"id":"com.android.tools.r8.residualsignature","signature":"Lu5;"}
-    com.flony.lednotify.LedActivity$dismissReceiver$1 dismissReceiver -> C
+    com.flony.lednotify.LedActivity$dismissReceiver$1 dismissReceiver -> B
       # {"id":"com.android.tools.r8.residualsignature","signature":"Lad;"}
-    com.flony.lednotify.LedActivity$userPresentReceiver$1 userPresentReceiver -> D
+    com.flony.lednotify.LedActivity$userPresentReceiver$1 userPresentReceiver -> C
       # {"id":"com.android.tools.r8.residualsignature","signature":"Lad;"}
-    com.flony.lednotify.LedActivity$screenOffReceiver$1 screenOffReceiver -> E
+    com.flony.lednotify.LedActivity$screenOffReceiver$1 screenOffReceiver -> D
       # {"id":"com.android.tools.r8.residualsignature","signature":"Lad;"}
-    int $r8$clinit -> F
+    int $r8$clinit -> E
       # {"id":"com.android.tools.r8.synthesized"}
     com.flony.lednotify.LedView ledView -> x
       # {"id":"com.android.tools.r8.residualsignature","signature":"Lhd;"}
     android.os.Handler handler -> y
-    android.os.PowerManager$WakeLock wakeLock -> z
-    1:3:void <init>():21:21 -> <init>
-    4:14:void <init>():24:24 -> <init>
-    15:22:void <init>():29:29 -> <init>
-    23:30:void <init>():36:36 -> <init>
-    31:38:void <init>():43:43 -> <init>
-    39:47:void <init>():52:52 -> <init>
-    1:3:void finish():233:233 -> finish
-    4:9:void finish():234:234 -> finish
-    10:14:void finish():235:235 -> finish
-    15:18:void finish():238:238 -> finish
-    3:9:void onCreate(android.os.Bundle):74:74 -> onCreate
-    10:12:void onCreate(android.os.Bundle):75:75 -> onCreate
-    13:16:void onCreate(android.os.Bundle):76:76 -> onCreate
-    17:19:void onCreate(android.os.Bundle):79:79 -> onCreate
-    20:29:void onCreate(android.os.Bundle):81:81 -> onCreate
-    30:45:void onCreate(android.os.Bundle):85:85 -> onCreate
-    46:52:void onCreate(android.os.Bundle):93:93 -> onCreate
-    53:64:void onCreate(android.os.Bundle):94:94 -> onCreate
+    java.lang.Runnable timeoutRunnable -> z
+      # {"id":"com.android.tools.r8.residualsignature","signature":"Lb1;"}
+    1:3:void <init>():20:20 -> <init>
+    4:14:void <init>():23:23 -> <init>
+    15:22:void <init>():27:27 -> <init>
+    23:30:void <init>():34:34 -> <init>
+    31:38:void <init>():41:41 -> <init>
+    39:47:void <init>():50:50 -> <init>
+    1:3:void finish():200:200 -> finish
+    4:9:void finish():201:201 -> finish
+    10:14:void finish():202:202 -> finish
+    15:18:void finish():205:205 -> finish
+    3:9:void onCreate(android.os.Bundle):59:59 -> onCreate
+    10:12:void onCreate(android.os.Bundle):60:60 -> onCreate
+    13:16:void onCreate(android.os.Bundle):61:61 -> onCreate
+    17:19:void onCreate(android.os.Bundle):64:64 -> onCreate
+    20:29:void onCreate(android.os.Bundle):66:66 -> onCreate
+    30:45:void onCreate(android.os.Bundle):70:70 -> onCreate
+    46:52:void onCreate(android.os.Bundle):78:78 -> onCreate
+    53:64:void onCreate(android.os.Bundle):79:79 -> onCreate
     65:69:void androidx.core.view.WindowInsetsControllerCompat.<init>(android.view.Window,android.view.View):122:122 -> onCreate
-    65:69:void onCreate(android.os.Bundle):94 -> onCreate
+    65:69:void onCreate(android.os.Bundle):79 -> onCreate
     70:73:void androidx.core.view.WindowInsetsControllerCompat.<init>(android.view.Window,android.view.View):124:124 -> onCreate
-    70:73:void onCreate(android.os.Bundle):94 -> onCreate
+    70:73:void onCreate(android.os.Bundle):79 -> onCreate
     74:79:void androidx.core.view.WindowInsetsControllerCompat.<init>(android.view.Window,android.view.View):125:125 -> onCreate
-    74:79:void onCreate(android.os.Bundle):94 -> onCreate
+    74:79:void onCreate(android.os.Bundle):79 -> onCreate
     80:81:void androidx.core.view.WindowInsetsControllerCompat.<init>(android.view.Window,android.view.View):127:127 -> onCreate
-    80:81:void onCreate(android.os.Bundle):94 -> onCreate
+    80:81:void onCreate(android.os.Bundle):79 -> onCreate
     82:84:void androidx.core.view.WindowInsetsControllerCompat$Impl23.<init>(android.view.Window,androidx.core.view.SoftwareKeyboardControllerCompat):566:566 -> onCreate
     82:84:void androidx.core.view.WindowInsetsControllerCompat$Impl26.<init>(android.view.Window,androidx.core.view.SoftwareKeyboardControllerCompat):592 -> onCreate
     82:84:void androidx.core.view.WindowInsetsControllerCompat.<init>(android.view.Window,android.view.View):127 -> onCreate
-    82:84:void onCreate(android.os.Bundle):94 -> onCreate
+    82:84:void onCreate(android.os.Bundle):79 -> onCreate
     85:87:void androidx.core.view.WindowInsetsControllerCompat.hide(int):189:189 -> onCreate
-    85:87:void onCreate(android.os.Bundle):95 -> onCreate
+    85:87:void onCreate(android.os.Bundle):80 -> onCreate
     88:90:void androidx.core.view.WindowInsetsControllerCompat.setSystemBarsBehavior(int):310:310 -> onCreate
-    88:90:void onCreate(android.os.Bundle):96 -> onCreate
-    91:93:void setupLockscreenFlags():146:146 -> onCreate
-    91:93:void onCreate(android.os.Bundle):99 -> onCreate
-    94:96:void setupLockscreenFlags():147:147 -> onCreate
-    94:96:void onCreate(android.os.Bundle):99 -> onCreate
-    97:105:void setupLockscreenFlags():155:155 -> onCreate
-    97:105:void onCreate(android.os.Bundle):99 -> onCreate
-    106:119:void acquireWakeLock():187:187 -> onCreate
-    106:119:void onCreate(android.os.Bundle):100 -> onCreate
-    120:121:void acquireWakeLock():191:191 -> onCreate
-    120:121:void onCreate(android.os.Bundle):100 -> onCreate
-    122:127:void acquireWakeLock():189:189 -> onCreate
-    122:127:void onCreate(android.os.Bundle):100 -> onCreate
-    128:139:void onCreate(android.os.Bundle):102:102 -> onCreate
-    140:156:void setupBrightness(int):159:159 -> onCreate
-    140:156:void onCreate(android.os.Bundle):103 -> onCreate
-    157:162:void setupBrightness(int):160:160 -> onCreate
-    157:162:void onCreate(android.os.Bundle):103 -> onCreate
-    163:169:void setupBrightness(int):161:161 -> onCreate
-    163:169:void onCreate(android.os.Bundle):103 -> onCreate
-    170:176:void onCreate(android.os.Bundle):105:105 -> onCreate
-    177:182:void onCreate(android.os.Bundle):107:107 -> onCreate
-    183:201:void onCreate(android.os.Bundle):108:108 -> onCreate
-    202:209:void applyEco1HzRefreshRate(boolean):166:166 -> onCreate
-    202:209:void onCreate(android.os.Bundle):110 -> onCreate
-    210:216:void applyEco1HzRefreshRate(boolean):168:168 -> onCreate
-    210:216:void onCreate(android.os.Bundle):110 -> onCreate
-    217:230:void applyEco1HzRefreshRate(boolean):171:171 -> onCreate
-    217:230:void onCreate(android.os.Bundle):110 -> onCreate
-    231:241:void applyEco1HzRefreshRate(boolean):172:172 -> onCreate
-    231:241:void onCreate(android.os.Bundle):110 -> onCreate
-    242:251:void applyEco1HzRefreshRate(boolean):174:174 -> onCreate
-    242:251:void onCreate(android.os.Bundle):110 -> onCreate
-    252:270:void applyEco1HzRefreshRate(boolean):175:175 -> onCreate
-    252:270:void onCreate(android.os.Bundle):110 -> onCreate
-    271:280:void applyEco1HzRefreshRate(boolean):178:178 -> onCreate
-    271:280:void onCreate(android.os.Bundle):110 -> onCreate
-    281:291:void applyEco1HzRefreshRate(boolean):179:179 -> onCreate
-    281:291:void onCreate(android.os.Bundle):110 -> onCreate
-    292:298:void applyEco1HzRefreshRate(boolean):181:181 -> onCreate
-    292:298:void onCreate(android.os.Bundle):110 -> onCreate
-    299:305:void onCreate(android.os.Bundle):112:112 -> onCreate
-    306:321:void onCreate(android.os.Bundle):113:113 -> onCreate
-    322:329:void onCreate(android.os.Bundle):114:114 -> onCreate
-    330:337:void onCreate(android.os.Bundle):115:115 -> onCreate
-    338:349:void onCreate(android.os.Bundle):116:116 -> onCreate
-    350:361:void onCreate(android.os.Bundle):117:117 -> onCreate
-    362:371:void onCreate(android.os.Bundle):118:118 -> onCreate
-    372:381:void onCreate(android.os.Bundle):119:119 -> onCreate
-    382:393:void onCreate(android.os.Bundle):120:120 -> onCreate
-    394:412:void onCreate(android.os.Bundle):121:121 -> onCreate
-    413:425:void onCreate(android.os.Bundle):122:122 -> onCreate
-    426:442:void onCreate(android.os.Bundle):123:123 -> onCreate
-    443:452:void onCreate(android.os.Bundle):125:125 -> onCreate
-    453:459:void onCreate(android.os.Bundle):126:126 -> onCreate
-    460:471:void onCreate(android.os.Bundle):129:129 -> onCreate
-    472:478:void onCreate(android.os.Bundle):133:133 -> onCreate
-    479:485:void onCreate(android.os.Bundle):135:135 -> onCreate
-    486:492:void onCreate(android.os.Bundle):136:136 -> onCreate
-    493:499:void onCreate(android.os.Bundle):137:137 -> onCreate
-    500:505:void onCreate(android.os.Bundle):139:139 -> onCreate
-    506:510:void onCreate(android.os.Bundle):140:140 -> onCreate
-    511:516:void onCreate(android.os.Bundle):141:141 -> onCreate
-    517:520:void onCreate(android.os.Bundle):133:133 -> onCreate
-    521:524:void onCreate(android.os.Bundle):129:129 -> onCreate
-    525:528:void onCreate(android.os.Bundle):126:126 -> onCreate
-    529:532:void onCreate(android.os.Bundle):125:125 -> onCreate
-    1:3:void onDestroy():243:243 -> onDestroy
-    4:8:void onDestroy():245:245 -> onDestroy
-    9:13:void onDestroy():246:246 -> onDestroy
-    14:19:void onDestroy():247:247 -> onDestroy
-    1:3:void onPause():222:222 -> onPause
-    4:10:void onPause():223:223 -> onPause
-    11:17:void onPause():224:224 -> onPause
-    18:21:void onPause():225:225 -> onPause
-    22:27:void onPause():226:226 -> onPause
-    28:31:void onPause():227:227 -> onPause
-    1:3:void onResume():196:196 -> onResume
-    4:14:void onResume():198:198 -> onResume
-    15:20:void onResume():199:199 -> onResume
-    21:24:void onResume():200:200 -> onResume
-    25:34:void onResume():204:204 -> onResume
-    35:44:void onResume():205:205 -> onResume
-    45:51:void onResume():207:207 -> onResume
-    52:58:void onResume():209:209 -> onResume
-    59:68:void onResume():210:210 -> onResume
-    69:75:void onResume():212:212 -> onResume
-    76:81:void onResume():213:213 -> onResume
-    82:88:void onResume():216:216 -> onResume
-    89:92:void onResume():217:217 -> onResume
+    88:90:void onCreate(android.os.Bundle):81 -> onCreate
+    91:93:void setupLockscreenFlags():130:130 -> onCreate
+    91:93:void onCreate(android.os.Bundle):84 -> onCreate
+    94:96:void setupLockscreenFlags():131:131 -> onCreate
+    94:96:void onCreate(android.os.Bundle):84 -> onCreate
+    97:105:void setupLockscreenFlags():139:139 -> onCreate
+    97:105:void onCreate(android.os.Bundle):84 -> onCreate
+    106:117:void onCreate(android.os.Bundle):86:86 -> onCreate
+    118:134:void setupBrightness(int):143:143 -> onCreate
+    118:134:void onCreate(android.os.Bundle):87 -> onCreate
+    135:140:void setupBrightness(int):144:144 -> onCreate
+    135:140:void onCreate(android.os.Bundle):87 -> onCreate
+    141:147:void setupBrightness(int):145:145 -> onCreate
+    141:147:void onCreate(android.os.Bundle):87 -> onCreate
+    148:154:void onCreate(android.os.Bundle):89:89 -> onCreate
+    155:160:void onCreate(android.os.Bundle):91:91 -> onCreate
+    161:179:void onCreate(android.os.Bundle):92:92 -> onCreate
+    180:187:void applyEco1HzRefreshRate(boolean):150:150 -> onCreate
+    180:187:void onCreate(android.os.Bundle):94 -> onCreate
+    188:194:void applyEco1HzRefreshRate(boolean):152:152 -> onCreate
+    188:194:void onCreate(android.os.Bundle):94 -> onCreate
+    195:208:void applyEco1HzRefreshRate(boolean):155:155 -> onCreate
+    195:208:void onCreate(android.os.Bundle):94 -> onCreate
+    209:219:void applyEco1HzRefreshRate(boolean):156:156 -> onCreate
+    209:219:void onCreate(android.os.Bundle):94 -> onCreate
+    220:229:void applyEco1HzRefreshRate(boolean):158:158 -> onCreate
+    220:229:void onCreate(android.os.Bundle):94 -> onCreate
+    230:248:void applyEco1HzRefreshRate(boolean):159:159 -> onCreate
+    230:248:void onCreate(android.os.Bundle):94 -> onCreate
+    249:258:void applyEco1HzRefreshRate(boolean):162:162 -> onCreate
+    249:258:void onCreate(android.os.Bundle):94 -> onCreate
+    259:269:void applyEco1HzRefreshRate(boolean):163:163 -> onCreate
+    259:269:void onCreate(android.os.Bundle):94 -> onCreate
+    270:276:void applyEco1HzRefreshRate(boolean):165:165 -> onCreate
+    270:276:void onCreate(android.os.Bundle):94 -> onCreate
+    277:283:void onCreate(android.os.Bundle):96:96 -> onCreate
+    284:299:void onCreate(android.os.Bundle):97:97 -> onCreate
+    300:307:void onCreate(android.os.Bundle):98:98 -> onCreate
+    308:315:void onCreate(android.os.Bundle):99:99 -> onCreate
+    316:327:void onCreate(android.os.Bundle):100:100 -> onCreate
+    328:339:void onCreate(android.os.Bundle):101:101 -> onCreate
+    340:349:void onCreate(android.os.Bundle):102:102 -> onCreate
+    350:359:void onCreate(android.os.Bundle):103:103 -> onCreate
+    360:371:void onCreate(android.os.Bundle):104:104 -> onCreate
+    372:390:void onCreate(android.os.Bundle):105:105 -> onCreate
+    391:403:void onCreate(android.os.Bundle):106:106 -> onCreate
+    404:420:void onCreate(android.os.Bundle):107:107 -> onCreate
+    421:430:void onCreate(android.os.Bundle):109:109 -> onCreate
+    431:437:void onCreate(android.os.Bundle):110:110 -> onCreate
+    438:449:void onCreate(android.os.Bundle):113:113 -> onCreate
+    450:456:void onCreate(android.os.Bundle):117:117 -> onCreate
+    457:463:void onCreate(android.os.Bundle):119:119 -> onCreate
+    464:470:void onCreate(android.os.Bundle):120:120 -> onCreate
+    471:477:void onCreate(android.os.Bundle):121:121 -> onCreate
+    478:483:void onCreate(android.os.Bundle):123:123 -> onCreate
+    484:488:void onCreate(android.os.Bundle):124:124 -> onCreate
+    489:494:void onCreate(android.os.Bundle):125:125 -> onCreate
+    495:498:void onCreate(android.os.Bundle):117:117 -> onCreate
+    499:502:void onCreate(android.os.Bundle):113:113 -> onCreate
+    503:506:void onCreate(android.os.Bundle):110:110 -> onCreate
+    507:510:void onCreate(android.os.Bundle):109:109 -> onCreate
+    1:3:void onDestroy():210:210 -> onDestroy
+    4:8:void onDestroy():212:212 -> onDestroy
+    9:13:void onDestroy():213:213 -> onDestroy
+    14:19:void onDestroy():214:214 -> onDestroy
+    1:3:void onPause():194:194 -> onPause
+    4:10:void onPause():195:195 -> onPause
+    11:18:void onPause():196:196 -> onPause
+    1:3:void onResume():171:171 -> onResume
+    4:14:void onResume():173:173 -> onResume
+    15:20:void onResume():174:174 -> onResume
+    21:24:void onResume():175:175 -> onResume
+    25:31:void onResume():179:179 -> onResume
+    32:38:void onResume():181:181 -> onResume
+    39:48:void onResume():182:182 -> onResume
+    49:55:void onResume():184:184 -> onResume
+    56:61:void onResume():185:185 -> onResume
+    62:68:void onResume():188:188 -> onResume
+    69:72:void onResume():189:189 -> onResume
 com.flony.lednotify.LedActivity$$ExternalSyntheticApiModelOutline0 -> zc:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -40982,24 +40974,11 @@ com.flony.lednotify.LedActivity$dismissReceiver$1 -> ad:
     com.flony.lednotify.LedActivity this$0 -> b
     1:8:void LedActivity$dismissReceiver$1.<init>(com.flony.lednotify.LedActivity,byte):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
-    11:22:void com.flony.lednotify.LedActivity$userPresentReceiver$1.onReceive(android.content.Context,android.content.Intent):45:45 -> onReceive
-    23:28:void com.flony.lednotify.LedActivity$userPresentReceiver$1.onReceive(android.content.Context,android.content.Intent):46:46 -> onReceive
-    29:40:void com.flony.lednotify.LedActivity$screenOffReceiver$1.onReceive(android.content.Context,android.content.Intent):54:54 -> onReceive
-    41:42:void com.flony.lednotify.LedActivity$screenOffReceiver$1.onReceive(android.content.Context,android.content.Intent):55:55 -> onReceive
-    43:53:void com.flony.lednotify.LedActivity.wakeUpLockscreen():63:63 -> onReceive
-    43:53:void com.flony.lednotify.LedActivity.access$wakeUpLockscreen(com.flony.lednotify.LedActivity):21 -> onReceive
-    43:53:void com.flony.lednotify.LedActivity$screenOffReceiver$1.onReceive(android.content.Context,android.content.Intent):55 -> onReceive
-    54:58:void com.flony.lednotify.LedActivity.wakeUpLockscreen():67:67 -> onReceive
-    54:58:void com.flony.lednotify.LedActivity.access$wakeUpLockscreen(com.flony.lednotify.LedActivity):21 -> onReceive
-    54:58:void com.flony.lednotify.LedActivity$screenOffReceiver$1.onReceive(android.content.Context,android.content.Intent):55 -> onReceive
-    59:64:void com.flony.lednotify.LedActivity.wakeUpLockscreen():65:65 -> onReceive
-    59:64:void com.flony.lednotify.LedActivity.access$wakeUpLockscreen(com.flony.lednotify.LedActivity):21 -> onReceive
-    59:64:void com.flony.lednotify.LedActivity$screenOffReceiver$1.onReceive(android.content.Context,android.content.Intent):55 -> onReceive
-    65:67:void com.flony.lednotify.LedActivity.wakeUpLockscreen():69:69 -> onReceive
-    65:67:void com.flony.lednotify.LedActivity.access$wakeUpLockscreen(com.flony.lednotify.LedActivity):21 -> onReceive
-    65:67:void com.flony.lednotify.LedActivity$screenOffReceiver$1.onReceive(android.content.Context,android.content.Intent):55 -> onReceive
-    68:71:void com.flony.lednotify.LedActivity$screenOffReceiver$1.onReceive(android.content.Context,android.content.Intent):56:56 -> onReceive
-    72:76:void onReceive(android.content.Context,android.content.Intent):38:38 -> onReceive
+    11:22:void com.flony.lednotify.LedActivity$userPresentReceiver$1.onReceive(android.content.Context,android.content.Intent):43:43 -> onReceive
+    23:28:void com.flony.lednotify.LedActivity$userPresentReceiver$1.onReceive(android.content.Context,android.content.Intent):44:44 -> onReceive
+    29:40:void com.flony.lednotify.LedActivity$screenOffReceiver$1.onReceive(android.content.Context,android.content.Intent):52:52 -> onReceive
+    41:44:void com.flony.lednotify.LedActivity$screenOffReceiver$1.onReceive(android.content.Context,android.content.Intent):53:53 -> onReceive
+    45:48:void onReceive(android.content.Context,android.content.Intent):36:36 -> onReceive
 com.flony.lednotify.LedNotificationListener -> com.flony.lednotify.LedNotificationListener:
 # {"id":"sourceFile","fileName":"LedNotificationListener.kt"}
     com.flony.lednotify.LedNotificationListener$batteryReceiver$1 batteryReceiver -> a
@@ -41008,135 +40987,134 @@ com.flony.lednotify.LedNotificationListener -> com.flony.lednotify.LedNotificati
       # {"id":"com.android.tools.r8.synthesized"}
     1:3:void <init>():22:22 -> <init>
     4:12:void <init>():24:24 -> <init>
-    3:9:void startChargingLed(int):213:213 -> a
-    10:17:void startChargingLed(int):214:214 -> a
-    18:23:void startChargingLed(int):215:215 -> a
-    24:31:void startChargingLed(int):216:216 -> a
-    32:38:void startChargingLed(int):217:217 -> a
-    39:44:void startChargingLed(int):218:218 -> a
-    45:52:void startChargingLed(int):219:219 -> a
-    53:60:void startChargingLed(int):220:220 -> a
-    61:68:void startChargingLed(int):221:221 -> a
-    69:76:void startChargingLed(int):222:222 -> a
-    77:83:void startChargingLed(int):223:223 -> a
-    84:89:void startChargingLed(int):224:224 -> a
-    90:98:void startChargingLed(int):226:226 -> a
-    99:101:void startChargingLed(int):227:227 -> a
-    102:108:void startChargingLed(int):228:228 -> a
-    109:113:void startChargingLed(int):229:229 -> a
-    114:118:void startChargingLed(int):230:230 -> a
-    119:123:void startChargingLed(int):231:231 -> a
-    124:128:void startChargingLed(int):232:232 -> a
-    129:133:void startChargingLed(int):233:233 -> a
-    134:138:void startChargingLed(int):234:234 -> a
-    139:143:void startChargingLed(int):235:235 -> a
-    144:148:void startChargingLed(int):236:236 -> a
-    149:153:void startChargingLed(int):237:237 -> a
-    154:160:void startChargingLed(int):238:238 -> a
-    161:164:void startChargingLed(int):240:240 -> a
-    1:7:void startLedActivity(android.service.notification.StatusBarNotification):208:208 -> b
-    8:14:int resolveColorForPackage(java.lang.String):252:252 -> b
-    8:14:void startLedActivity(android.service.notification.StatusBarNotification):208 -> b
-    15:22:int resolveColorForPackage(java.lang.String):253:253 -> b
-    15:22:void startLedActivity(android.service.notification.StatusBarNotification):208 -> b
-    23:47:int resolveColorForPackage(java.lang.String):256:256 -> b
-    23:47:void startLedActivity(android.service.notification.StatusBarNotification):208 -> b
-    48:57:int resolveColorForPackage(java.lang.String):257:257 -> b
-    48:57:void startLedActivity(android.service.notification.StatusBarNotification):208 -> b
-    58:81:int resolveColorForPackage(java.lang.String):260:260 -> b
-    58:81:void startLedActivity(android.service.notification.StatusBarNotification):208 -> b
-    82:90:int resolveColorForPackage(java.lang.String):261:261 -> b
-    82:90:void startLedActivity(android.service.notification.StatusBarNotification):208 -> b
-    91:103:int resolveColorForPackage(java.lang.String):266:266 -> b
-    91:103:void startLedActivity(android.service.notification.StatusBarNotification):208 -> b
-    104:107:void startLedActivity(android.service.notification.StatusBarNotification):209:209 -> b
+    3:9:void startChargingLed(int):217:217 -> a
+    10:17:void startChargingLed(int):218:218 -> a
+    18:23:void startChargingLed(int):219:219 -> a
+    24:31:void startChargingLed(int):220:220 -> a
+    32:38:void startChargingLed(int):221:221 -> a
+    39:44:void startChargingLed(int):222:222 -> a
+    45:52:void startChargingLed(int):223:223 -> a
+    53:60:void startChargingLed(int):224:224 -> a
+    61:68:void startChargingLed(int):225:225 -> a
+    69:76:void startChargingLed(int):226:226 -> a
+    77:83:void startChargingLed(int):227:227 -> a
+    84:89:void startChargingLed(int):228:228 -> a
+    90:98:void startChargingLed(int):230:230 -> a
+    99:101:void startChargingLed(int):231:231 -> a
+    102:108:void startChargingLed(int):232:232 -> a
+    109:113:void startChargingLed(int):233:233 -> a
+    114:118:void startChargingLed(int):234:234 -> a
+    119:123:void startChargingLed(int):235:235 -> a
+    124:128:void startChargingLed(int):236:236 -> a
+    129:133:void startChargingLed(int):237:237 -> a
+    134:138:void startChargingLed(int):238:238 -> a
+    139:143:void startChargingLed(int):239:239 -> a
+    144:148:void startChargingLed(int):240:240 -> a
+    149:153:void startChargingLed(int):241:241 -> a
+    154:160:void startChargingLed(int):242:242 -> a
+    161:164:void startChargingLed(int):244:244 -> a
+    1:7:void startLedActivity(android.service.notification.StatusBarNotification):212:212 -> b
+    8:14:int resolveColorForPackage(java.lang.String):256:256 -> b
+    8:14:void startLedActivity(android.service.notification.StatusBarNotification):212 -> b
+    15:22:int resolveColorForPackage(java.lang.String):257:257 -> b
+    15:22:void startLedActivity(android.service.notification.StatusBarNotification):212 -> b
+    23:47:int resolveColorForPackage(java.lang.String):260:260 -> b
+    23:47:void startLedActivity(android.service.notification.StatusBarNotification):212 -> b
+    48:57:int resolveColorForPackage(java.lang.String):261:261 -> b
+    48:57:void startLedActivity(android.service.notification.StatusBarNotification):212 -> b
+    58:81:int resolveColorForPackage(java.lang.String):264:264 -> b
+    58:81:void startLedActivity(android.service.notification.StatusBarNotification):212 -> b
+    82:90:int resolveColorForPackage(java.lang.String):265:265 -> b
+    82:90:void startLedActivity(android.service.notification.StatusBarNotification):212 -> b
+    91:103:int resolveColorForPackage(java.lang.String):270:270 -> b
+    91:103:void startLedActivity(android.service.notification.StatusBarNotification):212 -> b
+    104:107:void startLedActivity(android.service.notification.StatusBarNotification):213:213 -> b
     1:3:void onCreate():58:58 -> onCreate
     4:8:void onCreate():59:59 -> onCreate
     9:13:void onCreate():60:60 -> onCreate
     14:18:void onCreate():61:61 -> onCreate
-    19:23:void onCreate():62:62 -> onCreate
-    24:29:void onCreate():64:64 -> onCreate
-    1:3:void onDestroy():68:68 -> onDestroy
-    4:9:void onDestroy():70:70 -> onDestroy
-    5:12:void onNotificationPosted(android.service.notification.StatusBarNotification):78:78 -> onNotificationPosted
-    13:24:void onNotificationPosted(android.service.notification.StatusBarNotification):80:80 -> onNotificationPosted
-    25:31:void onNotificationPosted(android.service.notification.StatusBarNotification):83:83 -> onNotificationPosted
-    32:42:void onNotificationPosted(android.service.notification.StatusBarNotification):84:84 -> onNotificationPosted
-    43:54:void onNotificationPosted(android.service.notification.StatusBarNotification):87:87 -> onNotificationPosted
-    55:58:void onNotificationPosted(android.service.notification.StatusBarNotification):88:88 -> onNotificationPosted
-    59:66:void onNotificationPosted(android.service.notification.StatusBarNotification):90:90 -> onNotificationPosted
-    67:103:void onNotificationPosted(android.service.notification.StatusBarNotification):91:91 -> onNotificationPosted
-    104:137:void onNotificationPosted(android.service.notification.StatusBarNotification):92:92 -> onNotificationPosted
-    138:148:void onNotificationPosted(android.service.notification.StatusBarNotification):95:95 -> onNotificationPosted
-    149:154:void onNotificationPosted(android.service.notification.StatusBarNotification):96:96 -> onNotificationPosted
-    155:158:boolean isBatteryTooLow():103:103 -> onNotificationPosted
-    155:158:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    159:167:boolean isBatteryTooLow():104:104 -> onNotificationPosted
-    159:167:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    168:175:boolean isBatteryTooLow():107:107 -> onNotificationPosted
-    168:175:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    176:190:boolean isBatteryTooLow():108:108 -> onNotificationPosted
-    176:190:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    191:200:boolean isBatteryTooLow():109:109 -> onNotificationPosted
-    191:200:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    201:221:boolean isBatteryTooLow():110:110 -> onNotificationPosted
-    201:221:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    222:225:boolean isInQuietHours():122:122 -> onNotificationPosted
-    222:225:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    226:234:boolean isInQuietHours():123:123 -> onNotificationPosted
-    226:234:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    235:242:boolean isInQuietHours():126:126 -> onNotificationPosted
-    235:242:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    243:248:boolean isInQuietHours():127:127 -> onNotificationPosted
-    243:248:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    249:255:boolean isInQuietHours():128:128 -> onNotificationPosted
-    249:255:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    256:261:boolean isInQuietHours():129:129 -> onNotificationPosted
-    256:261:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    262:267:boolean isInQuietHours():131:131 -> onNotificationPosted
-    262:267:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    268:302:boolean isInQuietHours():132:132 -> onNotificationPosted
-    268:302:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    303:306:boolean isSystemDndActive():146:146 -> onNotificationPosted
-    303:306:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    307:316:boolean isSystemDndActive():147:147 -> onNotificationPosted
-    307:316:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    317:327:boolean isSystemDndActive():150:150 -> onNotificationPosted
-    317:327:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    328:340:boolean isSystemDndActive():151:151 -> onNotificationPosted
-    328:340:void onNotificationPosted(android.service.notification.StatusBarNotification):97 -> onNotificationPosted
-    341:354:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):158:158 -> onNotificationPosted
-    341:354:void onNotificationPosted(android.service.notification.StatusBarNotification):98 -> onNotificationPosted
-    355:360:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):159:159 -> onNotificationPosted
-    355:360:void onNotificationPosted(android.service.notification.StatusBarNotification):98 -> onNotificationPosted
-    361:364:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):162:162 -> onNotificationPosted
-    361:364:void onNotificationPosted(android.service.notification.StatusBarNotification):98 -> onNotificationPosted
-    365:373:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):166:166 -> onNotificationPosted
-    365:373:void onNotificationPosted(android.service.notification.StatusBarNotification):98 -> onNotificationPosted
-    374:375:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):167:167 -> onNotificationPosted
-    374:375:void onNotificationPosted(android.service.notification.StatusBarNotification):98 -> onNotificationPosted
-    376:378:void kotlin.jvm.internal.Ref$BooleanRef.<init>():85:85 -> onNotificationPosted
-    376:378:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):167 -> onNotificationPosted
-    376:378:void onNotificationPosted(android.service.notification.StatusBarNotification):98 -> onNotificationPosted
-    379:389:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):169:169 -> onNotificationPosted
-    379:389:void onNotificationPosted(android.service.notification.StatusBarNotification):98 -> onNotificationPosted
-    390:402:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):193:193 -> onNotificationPosted
-    390:402:void onNotificationPosted(android.service.notification.StatusBarNotification):98 -> onNotificationPosted
-    403:404:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):203:203 -> onNotificationPosted
-    403:404:void onNotificationPosted(android.service.notification.StatusBarNotification):98 -> onNotificationPosted
-    405:408:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):204:204 -> onNotificationPosted
-    405:408:void onNotificationPosted(android.service.notification.StatusBarNotification):98 -> onNotificationPosted
-    1:6:void onNotificationRemoved(android.service.notification.StatusBarNotification):245:245 -> onNotificationRemoved
+    19:24:void onCreate():63:63 -> onCreate
+    1:3:void onDestroy():67:67 -> onDestroy
+    4:9:void onDestroy():69:69 -> onDestroy
+    5:12:void onNotificationPosted(android.service.notification.StatusBarNotification):77:77 -> onNotificationPosted
+    13:24:void onNotificationPosted(android.service.notification.StatusBarNotification):79:79 -> onNotificationPosted
+    25:35:void onNotificationPosted(android.service.notification.StatusBarNotification):83:83 -> onNotificationPosted
+    36:43:void onNotificationPosted(android.service.notification.StatusBarNotification):84:84 -> onNotificationPosted
+    44:50:void onNotificationPosted(android.service.notification.StatusBarNotification):87:87 -> onNotificationPosted
+    51:61:void onNotificationPosted(android.service.notification.StatusBarNotification):88:88 -> onNotificationPosted
+    62:73:void onNotificationPosted(android.service.notification.StatusBarNotification):92:92 -> onNotificationPosted
+    74:77:void onNotificationPosted(android.service.notification.StatusBarNotification):93:93 -> onNotificationPosted
+    78:85:void onNotificationPosted(android.service.notification.StatusBarNotification):95:95 -> onNotificationPosted
+    86:122:void onNotificationPosted(android.service.notification.StatusBarNotification):96:96 -> onNotificationPosted
+    123:156:void onNotificationPosted(android.service.notification.StatusBarNotification):97:97 -> onNotificationPosted
+    157:160:boolean isBatteryTooLow():107:107 -> onNotificationPosted
+    157:160:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    161:169:boolean isBatteryTooLow():108:108 -> onNotificationPosted
+    161:169:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    170:177:boolean isBatteryTooLow():111:111 -> onNotificationPosted
+    170:177:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    178:192:boolean isBatteryTooLow():112:112 -> onNotificationPosted
+    178:192:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    193:202:boolean isBatteryTooLow():113:113 -> onNotificationPosted
+    193:202:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    203:223:boolean isBatteryTooLow():114:114 -> onNotificationPosted
+    203:223:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    224:227:boolean isInQuietHours():126:126 -> onNotificationPosted
+    224:227:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    228:236:boolean isInQuietHours():127:127 -> onNotificationPosted
+    228:236:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    237:244:boolean isInQuietHours():130:130 -> onNotificationPosted
+    237:244:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    245:250:boolean isInQuietHours():131:131 -> onNotificationPosted
+    245:250:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    251:257:boolean isInQuietHours():132:132 -> onNotificationPosted
+    251:257:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    258:263:boolean isInQuietHours():133:133 -> onNotificationPosted
+    258:263:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    264:269:boolean isInQuietHours():135:135 -> onNotificationPosted
+    264:269:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    270:304:boolean isInQuietHours():136:136 -> onNotificationPosted
+    270:304:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    305:308:boolean isSystemDndActive():150:150 -> onNotificationPosted
+    305:308:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    309:318:boolean isSystemDndActive():151:151 -> onNotificationPosted
+    309:318:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    319:329:boolean isSystemDndActive():154:154 -> onNotificationPosted
+    319:329:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    330:342:boolean isSystemDndActive():155:155 -> onNotificationPosted
+    330:342:void onNotificationPosted(android.service.notification.StatusBarNotification):100 -> onNotificationPosted
+    343:356:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):162:162 -> onNotificationPosted
+    343:356:void onNotificationPosted(android.service.notification.StatusBarNotification):103 -> onNotificationPosted
+    357:362:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):163:163 -> onNotificationPosted
+    357:362:void onNotificationPosted(android.service.notification.StatusBarNotification):103 -> onNotificationPosted
+    363:366:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):166:166 -> onNotificationPosted
+    363:366:void onNotificationPosted(android.service.notification.StatusBarNotification):103 -> onNotificationPosted
+    367:375:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):170:170 -> onNotificationPosted
+    367:375:void onNotificationPosted(android.service.notification.StatusBarNotification):103 -> onNotificationPosted
+    376:377:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):171:171 -> onNotificationPosted
+    376:377:void onNotificationPosted(android.service.notification.StatusBarNotification):103 -> onNotificationPosted
+    378:380:void kotlin.jvm.internal.Ref$BooleanRef.<init>():85:85 -> onNotificationPosted
+    378:380:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):171 -> onNotificationPosted
+    378:380:void onNotificationPosted(android.service.notification.StatusBarNotification):103 -> onNotificationPosted
+    381:391:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):173:173 -> onNotificationPosted
+    381:391:void onNotificationPosted(android.service.notification.StatusBarNotification):103 -> onNotificationPosted
+    392:404:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):197:197 -> onNotificationPosted
+    392:404:void onNotificationPosted(android.service.notification.StatusBarNotification):103 -> onNotificationPosted
+    405:406:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):207:207 -> onNotificationPosted
+    405:406:void onNotificationPosted(android.service.notification.StatusBarNotification):103 -> onNotificationPosted
+    407:410:void checkProximityAndStartLed(android.service.notification.StatusBarNotification):208:208 -> onNotificationPosted
+    407:410:void onNotificationPosted(android.service.notification.StatusBarNotification):103 -> onNotificationPosted
+    1:6:void onNotificationRemoved(android.service.notification.StatusBarNotification):249:249 -> onNotificationRemoved
     7:11:java.util.List kotlin.collections.ArraysKt___ArraysKt.filter(java.lang.Object[],kotlin.jvm.functions.Function1):3829:3829 -> onNotificationRemoved
-    7:11:void onNotificationRemoved(android.service.notification.StatusBarNotification):245 -> onNotificationRemoved
+    7:11:void onNotificationRemoved(android.service.notification.StatusBarNotification):249 -> onNotificationRemoved
     12:17:java.util.Collection kotlin.collections.ArraysKt___ArraysKt.filterTo(java.lang.Object[],java.util.Collection,kotlin.jvm.functions.Function1):4344:4344 -> onNotificationRemoved
-    12:17:void onNotificationRemoved(android.service.notification.StatusBarNotification):245 -> onNotificationRemoved
-    18:23:void onNotificationRemoved(android.service.notification.StatusBarNotification):245:245 -> onNotificationRemoved
+    12:17:void onNotificationRemoved(android.service.notification.StatusBarNotification):249 -> onNotificationRemoved
+    18:23:void onNotificationRemoved(android.service.notification.StatusBarNotification):249:249 -> onNotificationRemoved
     24:29:java.util.Collection kotlin.collections.ArraysKt___ArraysKt.filterTo(java.lang.Object[],java.util.Collection,kotlin.jvm.functions.Function1):4344:4344 -> onNotificationRemoved
-    24:29:void onNotificationRemoved(android.service.notification.StatusBarNotification):245 -> onNotificationRemoved
-    30:31:void onNotificationRemoved(android.service.notification.StatusBarNotification):245:245 -> onNotificationRemoved
-    32:37:void onNotificationRemoved(android.service.notification.StatusBarNotification):246:246 -> onNotificationRemoved
-    38:48:void onNotificationRemoved(android.service.notification.StatusBarNotification):247:247 -> onNotificationRemoved
+    24:29:void onNotificationRemoved(android.service.notification.StatusBarNotification):249 -> onNotificationRemoved
+    30:31:void onNotificationRemoved(android.service.notification.StatusBarNotification):249:249 -> onNotificationRemoved
+    32:37:void onNotificationRemoved(android.service.notification.StatusBarNotification):250:250 -> onNotificationRemoved
+    38:48:void onNotificationRemoved(android.service.notification.StatusBarNotification):251:251 -> onNotificationRemoved
 com.flony.lednotify.LedNotificationListener$$ExternalSyntheticLambda0 -> bd:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -41155,11 +41133,11 @@ com.flony.lednotify.LedNotificationListener$$ExternalSyntheticLambda0 -> bd:
     1:14:void LedNotificationListener$$ExternalSyntheticLambda0.<init>(Ref$BooleanRef,android.hardware.SensorManager,LedNotificationListener$checkProximityAndStartLed$listener$1,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lsh;Landroid/hardware/SensorManager;Lcd;Lcom/flony/lednotify/LedNotificationListener;Landroid/service/notification/StatusBarNotification;)V"}
-    7:13:void com.flony.lednotify.LedNotificationListener.checkProximityAndStartLed$lambda$1(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,com.flony.lednotify.LedNotificationListener$checkProximityAndStartLed$listener$1,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):194:194 -> run
+    7:13:void com.flony.lednotify.LedNotificationListener.checkProximityAndStartLed$lambda$1(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,com.flony.lednotify.LedNotificationListener$checkProximityAndStartLed$listener$1,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):198:198 -> run
       # {"id":"com.android.tools.r8.residualsignature","signature":"()V"}
-    14:15:void com.flony.lednotify.LedNotificationListener.checkProximityAndStartLed$lambda$1(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,com.flony.lednotify.LedNotificationListener$checkProximityAndStartLed$listener$1,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):195:195 -> run
-    16:18:void com.flony.lednotify.LedNotificationListener.checkProximityAndStartLed$lambda$1(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,com.flony.lednotify.LedNotificationListener$checkProximityAndStartLed$listener$1,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):197:197 -> run
-    19:26:void com.flony.lednotify.LedNotificationListener.checkProximityAndStartLed$lambda$1(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,com.flony.lednotify.LedNotificationListener$checkProximityAndStartLed$listener$1,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):199:199 -> run
+    14:15:void com.flony.lednotify.LedNotificationListener.checkProximityAndStartLed$lambda$1(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,com.flony.lednotify.LedNotificationListener$checkProximityAndStartLed$listener$1,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):199:199 -> run
+    16:18:void com.flony.lednotify.LedNotificationListener.checkProximityAndStartLed$lambda$1(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,com.flony.lednotify.LedNotificationListener$checkProximityAndStartLed$listener$1,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):201:201 -> run
+    19:26:void com.flony.lednotify.LedNotificationListener.checkProximityAndStartLed$lambda$1(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,com.flony.lednotify.LedNotificationListener$checkProximityAndStartLed$listener$1,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):203:203 -> run
 com.flony.lednotify.LedNotificationListener$checkProximityAndStartLed$listener$1 -> cd:
 # {"id":"sourceFile","fileName":"LedNotificationListener.kt"}
     kotlin.jvm.internal.Ref$BooleanRef $listenerRegistered -> a
@@ -41169,19 +41147,19 @@ com.flony.lednotify.LedNotificationListener$checkProximityAndStartLed$listener$1
     android.hardware.Sensor $proximitySensor -> d
     com.flony.lednotify.LedNotificationListener this$0 -> e
     android.service.notification.StatusBarNotification $sbn -> f
-    1:3:void <init>(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,android.os.Handler,android.hardware.Sensor,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):169:169 -> <init>
+    1:3:void <init>(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,android.os.Handler,android.hardware.Sensor,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):173:173 -> <init>
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lsh;Landroid/hardware/SensorManager;Landroid/os/Handler;Landroid/hardware/Sensor;Lcom/flony/lednotify/LedNotificationListener;Landroid/service/notification/StatusBarNotification;)V"}
     4:16:void <init>(kotlin.jvm.internal.Ref$BooleanRef,android.hardware.SensorManager,android.os.Handler,android.hardware.Sensor,com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):0:0 -> <init>
-    1:1:void onAccuracyChanged(android.hardware.Sensor,int):189:189 -> onAccuracyChanged
-    4:11:void onSensorChanged(android.hardware.SensorEvent):172:172 -> onSensorChanged
-    12:13:void onSensorChanged(android.hardware.SensorEvent):173:173 -> onSensorChanged
-    14:18:void onSensorChanged(android.hardware.SensorEvent):175:175 -> onSensorChanged
-    19:24:void onSensorChanged(android.hardware.SensorEvent):177:177 -> onSensorChanged
-    25:28:void onSensorChanged(android.hardware.SensorEvent):179:179 -> onSensorChanged
-    29:45:void onSensorChanged(android.hardware.SensorEvent):180:180 -> onSensorChanged
-    46:47:void onSensorChanged(android.hardware.SensorEvent):185:185 -> onSensorChanged
+    1:1:void onAccuracyChanged(android.hardware.Sensor,int):193:193 -> onAccuracyChanged
+    4:11:void onSensorChanged(android.hardware.SensorEvent):176:176 -> onSensorChanged
+    12:13:void onSensorChanged(android.hardware.SensorEvent):177:177 -> onSensorChanged
+    14:18:void onSensorChanged(android.hardware.SensorEvent):179:179 -> onSensorChanged
+    19:24:void onSensorChanged(android.hardware.SensorEvent):181:181 -> onSensorChanged
+    25:28:void onSensorChanged(android.hardware.SensorEvent):183:183 -> onSensorChanged
+    29:45:void onSensorChanged(android.hardware.SensorEvent):184:184 -> onSensorChanged
+    46:47:void onSensorChanged(android.hardware.SensorEvent):189:189 -> onSensorChanged
     48:55:void com.flony.lednotify.LedNotificationListener.access$startLedActivity(com.flony.lednotify.LedNotificationListener,android.service.notification.StatusBarNotification):22:22 -> onSensorChanged
-    48:55:void onSensorChanged(android.hardware.SensorEvent):185 -> onSensorChanged
+    48:55:void onSensorChanged(android.hardware.SensorEvent):189 -> onSensorChanged
 com.flony.lednotify.LedTileService -> com.flony.lednotify.LedTileService:
 # {"id":"sourceFile","fileName":"LedTileService.kt"}
     1:4:void <init>():10:10 -> <init>
