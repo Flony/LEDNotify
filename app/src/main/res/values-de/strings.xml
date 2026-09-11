@@ -11,7 +11,8 @@
     <string name="label_on_dur">Leuchtdauer:</string>
     <string name="label_off_dur">Aus-Dauer (Intervall):</string>
     <string name="label_fade">Übergangsdauer (Fade):</string>
-    <string name="btn_test">TEST &amp; POSITION</string>
+    <string name="btn_test">TEST &amp; ANPASSUNG</string>
+    <string name="pinch_size_hint">Größe mit zwei Fingern anpassen</string>
     <string name="btn_burnout">Einbrennschutz-Methode</string>
     <string name="nav_permissions_lang">Berechtigungen / Sprache verwalten</string>
     <string name="perm_title">Berechtigungseinstellungen</string>
@@ -21,6 +22,7 @@
     <string name="btn_perm_oem">3. Zusätzliche Berechtigungen</string>
     <string name="desc_perm_oem">💡 Wenn die App nicht ordnungsgemäß funktioniert, versuchen Sie, diese zusätzlichen Berechtigungen zu aktivieren (z. B. "Auf Sperrbildschirm anzeigen", "Autostart").</string>
     <string name="status_oem_recommended">⚠️ %s (Für Ihr Gerät empfohlen)</string>
+    <string name="btn_about_github">🌐 Über die App / GitHub / Support</string>
     <string name="btn_continue">Zur App fortfahren</string>
     <string name="lang_title">App-Sprache</string>
     <string name="lang_system">Systemstandard</string>
@@ -97,4 +99,11 @@
     <string name="tile_label_on">LED Notify: AN</string>
     <string name="tile_label_off">LED Notify: AUS</string>
     <string name="title_disabled">LED Notify (Deaktiviert)</string>
+    <string name="warning_system_aod_title">⚠️ System AOD ist aktiv</string>
+    <string name="warning_system_aod_desc">Das System-Always-On-Display ist aktiv. Für beste Kompatibilität oder Nutzung von AODiode zusammen mit der Systemuhr aktivieren Sie den transparenten Hintergrund in den erweiterten Einstellungen oder schalten Sie das System-AOD aus.</string>
+    <string name="btn_open_display_settings">Anzeigeeinstellungen öffnen</string>
+    <string name="label_transparent_bg_title">Transparenter Hintergrund (für System-AOD)</string>
+    <string name="desc_transparent_bg">Hält Systemuhr und AOD auf dem Sperrbildschirm sichtbar, während AODiode darüber leuchtet. (Hinweis: Funktioniert möglicherweise nicht auf allen Geräten mit Hardware-AOD).</string>
+    <string name="title_ascii_input">Eigene ASCII- / Textform</string>
+    <string name="hint_ascii_input">Symbol oder Text eingeben (z. B. ♥, ★, ⚡)</string>
 </resources>

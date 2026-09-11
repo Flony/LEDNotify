@@ -10,6 +10,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Shader
+import android.graphics.Typeface
 import android.os.Handler
 import android.os.Looper
 import android.view.View
@@ -21,7 +22,8 @@ class LedView(context: Context) : View(context) {
         strokeWidth = 5f
     }
 
-    private var shapeType = 1 // 0 = DOT, 1 = RING, 2 = PILL, 3 = EMPTY_PILL
+    private var shapeType = 1 // 0 = DOT, 1 = RING, 2 = PILL, 3 = EMPTY_PILL, 4 = ASCII
+    private var asciiText = "♥"
     private var pillWidthRatio = 2.5f
     private var pillHeightRatio = 1.5f
     private var currentRadius = 38f
@@ -61,24 +63,14 @@ class LedView(context: Context) : View(context) {
         invalidate()
     }
 
-    fun setConfig(
-        color: Int,
-        isDot: Boolean,
-        radius: Float,
-        offsetX: Float,
-        offsetY: Float,
-        bright: Int,
-        onDur: Long,
-        offDur: Long,
-        fadeDur: Long,
-        burnout: Int
-    ) {
-        setConfig(color, if (isDot) 0 else 1, radius, offsetX, offsetY, bright, onDur, offDur, fadeDur, burnout)
+    fun setAsciiText(text: String) {
+        asciiText = if (text.isEmpty()) "♥" else text
+        invalidate()
     }
 
     fun setConfig(
         color: Int,
-        shape: Int, // 0 = DOT, 1 = RING, 2 = PILL, 3 = EMPTY_PILL
+        shape: Int, // 0 = DOT, 1 = RING, 2 = PILL, 3 = EMPTY_PILL, 4 = ASCII
         radius: Float,
         offsetX: Float,
         offsetY: Float,
@@ -86,8 +78,10 @@ class LedView(context: Context) : View(context) {
         onDur: Long,
         offDur: Long,
         fadeDur: Long,
-        burnout: Int
+        burnout: Int,
+        isTransparentBg: Boolean = false
     ) {
+        setBackgroundColor(if (isTransparentBg) Color.TRANSPARENT else Color.BLACK)
         paintColor = color
         shapeType = shape
         currentRadius = radius
@@ -233,12 +227,52 @@ class LedView(context: Context) : View(context) {
         restartCycle()
     }
 
+    private val arrowPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.parseColor("#B0888888")
+        textSize = 42f
+        textAlign = Paint.Align.CENTER
+        typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
+    }
+
+    private fun drawOffscreenArrowIfNeeded(canvas: Canvas, cx: Float, cy: Float) {
+        val w = width.toFloat()
+        val h = height.toFloat()
+        if (w <= 0f || h <= 0f) return
+
+        val margin = 48f
+        val isLeft = cx < margin
+        val isRight = cx > w - margin
+        val isTop = cy < margin
+        val isBottom = cy > h - margin
+
+        if (isLeft || isRight || isTop || isBottom) {
+            val arrowText = when {
+                isLeft && isTop -> "◤"
+                isRight && isTop -> "◥"
+                isLeft && isBottom -> "◣"
+                isRight && isBottom -> "◢"
+                isLeft -> "◄"
+                isRight -> "►"
+                isTop -> "▲"
+                isBottom -> "▼"
+                else -> ""
+            }
+
+            val arrowX = cx.coerceIn(margin, w - margin)
+            val arrowY = cy.coerceIn(margin + 20f, h - margin)
+
+            canvas.drawText(arrowText, arrowX, arrowY, arrowPaint)
+        }
+    }
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         if (currentDrawAlpha > 0 || isDragging) {
             val shiftOffset = if (burnoutMethod == 1 && isShifted) 2f else 0f
             val cx = (width / 2f) + customOffsetX + shiftOffset
             val cy = 60f + customOffsetY + shiftOffset
+
+            drawOffscreenArrowIfNeeded(canvas, cx, cy)
 
             when (shapeType) {
                 0 -> { // DOT
@@ -270,6 +304,13 @@ class LedView(context: Context) : View(context) {
                     val bottom = cy + (pillHeight / 2f)
                     val cornerRadius = Math.min(pillWidth, pillHeight) / 2f
                     canvas.drawRoundRect(left, top, right, bottom, cornerRadius, cornerRadius, paint)
+                }
+                4 -> { // ASCII / Custom Text
+                    paint.style = Paint.Style.FILL
+                    paint.textSize = currentRadius * 1.8f
+                    paint.textAlign = Paint.Align.CENTER
+                    val yPos = cy - ((paint.descent() + paint.ascent()) / 2f)
+                    canvas.drawText(asciiText, cx, yPos, paint)
                 }
             }
         }

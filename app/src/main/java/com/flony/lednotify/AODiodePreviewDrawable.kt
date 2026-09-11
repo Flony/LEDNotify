@@ -8,18 +8,22 @@ import android.graphics.drawable.Drawable
 
 class AODiodePreviewDrawable(
     private var color: Int,
-    private var shapeType: Int, // 0 = DOT, 1 = RING, 2 = PILL, 3 = EMPTY_PILL
+    private var shapeType: Int, // 0 = DOT, 1 = RING, 2 = PILL, 3 = EMPTY_PILL, 4 = ASCII
     private var radiusPx: Float,
     private var pillWidthRatio: Float = 2.5f,
-    private var pillHeightRatio: Float = 1.5f
+    private var pillHeightRatio: Float = 1.5f,
+    private var asciiText: String = "♥"
 ) : Drawable() {
-
-    constructor(color: Int, isDot: Boolean, radiusPx: Float) : this(color, if (isDot) 0 else 1, radiusPx)
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         this.color = color
         style = if (shapeType == 1 || shapeType == 3) Paint.Style.STROKE else Paint.Style.FILL
         strokeWidth = 5f
+    }
+
+    fun setAsciiText(text: String) {
+        asciiText = if (text.isEmpty()) "♥" else text
+        invalidateSelf()
     }
 
     fun setPillRatios(widthRatio: Float, heightRatio: Float) {
@@ -35,10 +39,6 @@ class AODiodePreviewDrawable(
         paint.style = if (shapeType == 1 || shapeType == 3) Paint.Style.STROKE else Paint.Style.FILL
         radiusPx = newRadiusPx
         invalidateSelf()
-    }
-
-    fun updateConfig(newColor: Int, newIsDot: Boolean, newRadiusPx: Float) {
-        updateConfig(newColor, if (newIsDot) 0 else 1, newRadiusPx)
     }
 
     override fun getIntrinsicWidth(): Int = 96
@@ -87,6 +87,13 @@ class AODiodePreviewDrawable(
                 val bottom = cy + (pillHeight / 2f)
                 val cornerRadius = Math.min(pillWidth, pillHeight) / 2f
                 canvas.drawRoundRect(left, top, right, bottom, cornerRadius, cornerRadius, paint)
+            }
+            4 -> { // ASCII / Custom Text
+                paint.style = Paint.Style.FILL
+                paint.textSize = (mappedRadius * 1.8f).coerceIn(14f, height - 8f)
+                paint.textAlign = Paint.Align.CENTER
+                val yPos = cy - ((paint.descent() + paint.ascent()) / 2f)
+                canvas.drawText(asciiText, cx, yPos, paint)
             }
         }
     }

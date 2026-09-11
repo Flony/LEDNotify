@@ -1,6 +1,5 @@
 package com.flony.lednotify
 
-import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Color

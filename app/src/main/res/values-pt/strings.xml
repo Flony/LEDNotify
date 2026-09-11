@@ -11,7 +11,8 @@
     <string name="label_on_dur">Duração da iluminação:</string>
     <string name="label_off_dur">Duração desligado (Intervalo):</string>
     <string name="label_fade">Duração da transição (Fade):</string>
-    <string name="btn_test">TESTE &amp; POSIÇÃO</string>
+    <string name="btn_test">TESTAR E PERSONALIZAR</string>
+    <string name="pinch_size_hint">Ajustar tamanho com dois dedos</string>
     <string name="btn_burnout">Método de proteção</string>
     <string name="nav_permissions_lang">Gerenciar permissões / Idioma</string>
     <string name="perm_title">Configurações de permissão</string>
@@ -21,6 +22,7 @@
     <string name="btn_perm_oem">3. Permissões adicionais</string>
     <string name="desc_perm_oem">💡 Se o aplicativo ainda não funcionar corretamente, tente ativar estas permissões adicionais do sistema (por ex., "Exibir na tela de bloqueio", "Início automático").</string>
     <string name="status_oem_recommended">⚠️ %s (Recomendado para o seu dispositivo)</string>
+    <string name="btn_about_github">🌐 Sobre / GitHub / Suporte</string>
     <string name="btn_continue">Continuar</string>
     <string name="lang_title">Idioma do aplicativo</string>
     <string name="lang_system">Idioma do sistema</string>
@@ -97,4 +99,11 @@
     <string name="tile_label_on">LED Notify: LIGADO</string>
     <string name="tile_label_off">LED Notify: DESLIGADO</string>
     <string name="title_disabled">LED Notify (Desativado)</string>
+    <string name="warning_system_aod_title">⚠️ AOD do sistema ativo</string>
+    <string name="warning_system_aod_desc">O Always-On Display do sistema está ativo. Para melhor compatibilidade ou uso do AODiode junto com o relógio do sistema, ative o Fundo Transparente nas Configurações Avançadas ou desative o AOD do sistema.</string>
+    <string name="btn_open_display_settings">Abrir configurações de tela</string>
+    <string name="label_transparent_bg_title">Fundo Transparente (para AOD do sistema)</string>
+    <string name="desc_transparent_bg">Mantém o relógio do sistema e AOD visíveis na tela de bloqueio enquanto o AODiode ilumina sobre ele. (Nota: Pode não funcionar em todos os dispositivos com AOD por hardware).</string>
+    <string name="title_ascii_input">Formato ASCII / Texto personalizado</string>
+    <string name="hint_ascii_input">Digite um símbolo ou texto (ex: ♥, ★, ⚡)</string>
 </resources>

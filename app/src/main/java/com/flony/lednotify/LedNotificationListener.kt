@@ -15,8 +15,10 @@ import android.os.BatteryManager
 import android.os.Handler
 import android.os.Looper
 import android.os.PowerManager
+import android.provider.Settings
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
+import android.telephony.TelephonyManager
 import java.util.Calendar
 
 class LedNotificationListener : NotificationListenerService() {
@@ -54,6 +56,15 @@ class LedNotificationListener : NotificationListenerService() {
         }
     }
 
+    private val phoneStateReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            val state = intent?.getStringExtra(TelephonyManager.EXTRA_STATE)
+            if (state == TelephonyManager.EXTRA_STATE_RINGING || state == TelephonyManager.EXTRA_STATE_OFFHOOK) {
+                sendBroadcast(Intent("com.flony.lednotify.ACTION_CLEAR_LED"))
+            }
+        }
+    }
+
     override fun onCreate() {
         super.onCreate()
         val filter = IntentFilter().apply {
@@ -61,12 +72,16 @@ class LedNotificationListener : NotificationListenerService() {
             addAction(Intent.ACTION_POWER_DISCONNECTED)
         }
         registerReceiver(batteryReceiver, filter)
+        try {
+            registerReceiver(phoneStateReceiver, IntentFilter("android.intent.action.PHONE_STATE"))
+        } catch (_: Exception) {}
     }
 
     override fun onDestroy() {
         super.onDestroy()
         try {
             unregisterReceiver(batteryReceiver)
+            unregisterReceiver(phoneStateReceiver)
         } catch (_: Exception) {}
     }
 
@@ -79,6 +94,15 @@ class LedNotificationListener : NotificationListenerService() {
         val flags = sbn.notification.flags
         if ((flags and Notification.FLAG_FOREGROUND_SERVICE) != 0) return
 
+        val category = sbn.notification.category
+        val pkg = sbn.packageName
+
+        // Příchozí hovor: okamžitě zhasnout AODiode, aby byla viditelná obrazovka hovoru
+        if (category == Notification.CATEGORY_CALL || pkg.contains("dialer") || pkg.contains("telecom") || pkg.contains("incallui")) {
+            sendBroadcast(Intent("com.flony.lednotify.ACTION_CLEAR_LED"))
+            return
+        }
+
         // 2. Okamžitý návrat, pokud je obrazovka aktivní (uživatel mobil používá)
         val pm = getSystemService(POWER_SERVICE) as PowerManager
         if (pm.isInteractive) return
@@ -90,7 +114,6 @@ class LedNotificationListener : NotificationListenerService() {
 
         // 4. Kontrola Whitelistu / Blacklistu
         val blacklistedPkgs = prefs.getStringSet("pref_blacklisted_pkgs", emptySet()) ?: emptySet()
-        val pkg = sbn.packageName
 
         if (blacklistedPkgs.contains(pkg)) return
         if ((pkg.contains("dialer") || pkg.contains("phone") || pkg.contains("telecom")) && blacklistedPkgs.contains("system_calls")) return
@@ -226,6 +249,8 @@ class LedNotificationListener : NotificationListenerService() {
         val fadeDuration = prefs.getLong("pref_fade_duration", 2000L)
         val burnout = prefs.getInt("pref_burnout_method", 2)
         val isEco1Hz = prefs.getBoolean("pref_eco_1hz", false)
+        val isTransparentBg = prefs.getBoolean("pref_transparent_aod_bg", isSystemAodEnabled())
+        val asciiText = prefs.getString("pref_ascii_text", "♥") ?: "♥"
 
         val intent = Intent(this, LedActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
@@ -240,8 +265,27 @@ class LedNotificationListener : NotificationListenerService() {
             putExtra("AOD_FADE_DURATION", fadeDuration)
             putExtra("AOD_ECO_1HZ", isEco1Hz)
             putExtra("AOD_BURNOUT", burnout)
+            putExtra("AOD_TRANSPARENT_BG", isTransparentBg)
+            putExtra("AOD_ASCII_TEXT", asciiText)
         }
         startActivity(intent)
+    }
+
+    private fun isSystemAodEnabled(): Boolean {
+        val resolver = contentResolver
+        val secureKeys = listOf("doze_always_on", "aod_using", "aod_enable", "secure_gesture_aod_enable")
+        for (key in secureKeys) {
+            try {
+                if (Settings.Secure.getInt(resolver, key, 0) == 1) return true
+            } catch (_: Exception) {}
+        }
+        val systemKeys = listOf("aod_mode", "aod_mode_state", "aod_switch", "ambient_display_enabled")
+        for (key in systemKeys) {
+            try {
+                if (Settings.System.getInt(resolver, key, 0) != 0) return true
+            } catch (_: Exception) {}
+        }
+        return false
     }
 
     override fun onNotificationRemoved(sbn: StatusBarNotification?) {

@@ -6,9 +6,4 @@
         android:title="Reset"
         android:icon="@android:drawable/ic_menu_revert"
         app:showAsAction="always" />
-
-    <item
-        android:id="@+id/action_aodiode_preview"
-        android:title="AODiode Preview"
-        app:showAsAction="always" />
 </menu>

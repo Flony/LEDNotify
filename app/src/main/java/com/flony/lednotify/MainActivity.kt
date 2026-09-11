@@ -4,14 +4,17 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Typeface
 import android.graphics.drawable.GradientDrawable
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.text.InputFilter
 import android.view.Gravity
 import android.view.HapticFeedbackConstants
 import android.view.Menu
@@ -19,6 +22,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.HorizontalScrollView
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -80,6 +84,14 @@ class ShapeIconView(context: Context, val shapeType: Int) : View(context) {
                 val ry = pillHeight / 2f
                 canvas.drawRoundRect(left, top, right, bottom, rx, ry, paint)
             }
+            4 -> { // ASCII (Text Icon)
+                paint.style = Paint.Style.FILL
+                paint.textSize = 10f * resources.displayMetrics.density
+                paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD))
+                paint.textAlign = Paint.Align.CENTER
+                val yPos = cy - ((paint.descent() + paint.ascent()) / 2f)
+                canvas.drawText("ASCII", cx, yPos, paint)
+            }
         }
     }
 }
@@ -98,7 +110,6 @@ class MainActivity : AppCompatActivity() {
     private var currentFadeDuration = 2000L
     private var isEco1Hz = false
 
-    private lateinit var sizeValueText: TextView
     private lateinit var brightnessValueText: TextView
     private lateinit var onDurationValueText: TextView
     private lateinit var offDurationValueText: TextView
@@ -110,8 +121,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var iconRing: ShapeIconView
     private lateinit var iconPill: ShapeIconView
     private lateinit var iconEmptyPill: ShapeIconView
+    private lateinit var iconAscii: ShapeIconView
 
-    private lateinit var seekBarSize: SeekBar
     private lateinit var seekBarBrightness: SeekBar
     private lateinit var seekBarOnDur: SeekBar
     private lateinit var seekBarOffDur: SeekBar
@@ -150,6 +161,81 @@ class MainActivity : AppCompatActivity() {
             setPadding(48, 48, 48, 48)
         }
 
+        // System AOD Warning Card (displayed ONCE per ON cycle in MainActivity)
+        val isSystemAodOn = isSystemAodEnabled()
+        val hasBeenWarned = prefs.getBoolean("pref_system_aod_warned_on_cycle", false)
+
+        if (!isSystemAodOn) {
+            if (hasBeenWarned) {
+                prefs.edit().putBoolean("pref_system_aod_warned_on_cycle", false).apply()
+            }
+        } else if (!hasBeenWarned) {
+            val isNight = (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+            val cardBg = if (isNight) Color.parseColor("#33FF9800") else Color.parseColor("#1AFF9800")
+
+            val systemAodCard = LinearLayout(this).apply {
+                orientation = LinearLayout.VERTICAL
+                setPadding(32, 24, 32, 24)
+                setBackgroundColor(cardBg)
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ).apply { setMargins(0, 0, 0, 32) }
+            }
+
+            val tvWarningTitle = TextView(this).apply {
+                text = getString(R.string.warning_system_aod_title)
+                textSize = 15f
+                setTypeface(null, Typeface.BOLD)
+                setTextColor(Color.parseColor("#FFA500"))
+                setPadding(0, 0, 0, 8)
+            }
+
+            val tvWarningDesc = TextView(this).apply {
+                text = getString(R.string.warning_system_aod_desc)
+                textSize = 12f
+                setPadding(0, 0, 0, 12)
+            }
+
+            val btnRow = LinearLayout(this).apply {
+                orientation = LinearLayout.HORIZONTAL
+            }
+
+            val btnOpenDisplaySettings = Button(this).apply {
+                text = getString(R.string.btn_open_display_settings)
+                textSize = 13f
+                layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).apply {
+                    setMargins(0, 0, 8, 0)
+                }
+                setOnClickListener {
+                    it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                    try {
+                        startActivity(Intent(Settings.ACTION_DISPLAY_SETTINGS))
+                    } catch (_: Exception) {}
+                }
+            }
+
+            val btnDismiss = Button(this).apply {
+                text = "OK"
+                textSize = 13f
+                setOnClickListener {
+                    it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                    prefs.edit().putBoolean("pref_system_aod_warned_on_cycle", true).apply()
+                    systemAodCard.visibility = View.GONE
+                }
+            }
+
+            btnRow.addView(btnOpenDisplaySettings)
+            btnRow.addView(btnDismiss)
+
+            systemAodCard.addView(tvWarningTitle)
+            systemAodCard.addView(tvWarningDesc)
+            systemAodCard.addView(btnRow)
+
+            layout.addView(systemAodCard)
+            prefs.edit().putBoolean("pref_system_aod_warned_on_cycle", true).apply()
+        }
+
         // Header layout containing Title and large 1:1 Live Preview ImageView
         val headerLayout = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
@@ -168,7 +254,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         val previewSizePx = (72 * resources.displayMetrics.density).toInt()
-        previewDrawable = AODiodePreviewDrawable(currentColor, currentShapeType, currentRadius)
+        val pillWidthRatio = prefs.getFloat("pref_pill_width_ratio", 2.5f)
+        val pillHeightRatio = prefs.getFloat("pref_pill_height_ratio", 1.5f)
+        previewDrawable = AODiodePreviewDrawable(currentColor, currentShapeType, currentRadius, pillWidthRatio, pillHeightRatio)
 
         previewImageView = ImageView(this).apply {
             setImageDrawable(previewDrawable)
@@ -309,45 +397,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        iconAscii = ShapeIconView(this, 4).apply {
+            layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
+            setOnClickListener {
+                it.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
+                currentShapeType = 4
+                updateShapeToggleUI()
+                savePreferences()
+                showAsciiCustomInputDialog()
+            }
+        }
+
         shapeToggleLayout.addView(iconDot)
         shapeToggleLayout.addView(iconRing)
         shapeToggleLayout.addView(iconPill)
         shapeToggleLayout.addView(iconEmptyPill)
+        shapeToggleLayout.addView(iconAscii)
         updateShapeToggleUI()
 
-        // 3. Size Slider (2px to 75px)
-        val labelSize = TextView(this).apply {
-            text = getString(R.string.label_size)
-            textSize = 16f
-            setPadding(0, 8, 0, 4)
-        }
-        sizeValueText = TextView(this).apply {
-            text = getString(R.string.size_format, currentRadius.toInt())
-            textSize = 14f
-            setPadding(0, 0, 0, 8)
-        }
-        seekBarSize = SeekBar(this).apply {
-            max = 73
-            progress = (currentRadius - 2f).toInt().coerceIn(0, 73)
-            layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            ).apply { setMargins(0, 0, 0, 24) }
-            setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-                override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                    currentRadius = (progress + 2).toFloat()
-                    sizeValueText.text = getString(R.string.size_format, currentRadius.toInt())
-                    if (fromUser) {
-                        seekBar?.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
-                        savePreferences()
-                    }
-                }
-                override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-                override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-            })
-        }
-
-        // 4. Brightness Slider (0% to 100%)
+        // 3. Brightness Slider (0% to 100%)
         val labelBrightness = TextView(this).apply {
             text = getString(R.string.label_brightness)
             textSize = 16f
@@ -606,7 +674,26 @@ class MainActivity : AppCompatActivity() {
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
-            ).apply { setMargins(0, 0, 0, 32) }
+            ).apply { setMargins(0, 0, 0, 16) }
+        }
+
+        val btnAboutGitHub = TextView(this).apply {
+            text = getString(R.string.btn_about_github)
+            textSize = 13f
+            setTextColor(Color.GRAY)
+            gravity = Gravity.CENTER
+            setPadding(16, 24, 16, 24)
+            setOnClickListener {
+                it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                try {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Flony/LEDNotify"))
+                    startActivity(intent)
+                } catch (_: Exception) {}
+            }
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { setMargins(0, 8, 0, 16) }
         }
 
         layout.addView(headerLayout)
@@ -615,9 +702,6 @@ class MainActivity : AppCompatActivity() {
         layout.addView(btnAppColors)
         layout.addView(labelShape)
         layout.addView(shapeToggleLayout)
-        layout.addView(labelSize)
-        layout.addView(sizeValueText)
-        layout.addView(seekBarSize)
         layout.addView(labelBrightness)
         layout.addView(brightnessValueText)
         layout.addView(seekBarBrightness)
@@ -635,6 +719,7 @@ class MainActivity : AppCompatActivity() {
         layout.addView(btnAdvancedSettings)
         layout.addView(btnBurnout)
         layout.addView(btnPermissions)
+        layout.addView(btnAboutGitHub)
         scrollView.addView(layout)
 
         setContentView(scrollView)
@@ -671,15 +756,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
-        val menuItem = menu.findItem(R.id.action_aodiode_preview)
-        val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
-        val color = prefs.getInt("pref_color", Color.RED)
-        val defaultShape = if (prefs.getBoolean("pref_is_dot", false)) 0 else 1
-        val shapeType = prefs.getInt("pref_shape_type", defaultShape)
-        val radius = prefs.getFloat("pref_radius", 38f)
-
-        previewDrawable = AODiodePreviewDrawable(color, shapeType, radius)
-        menuItem.icon = previewDrawable
         return true
     }
 
@@ -776,7 +852,6 @@ class MainActivity : AppCompatActivity() {
             switchEco1Hz.isChecked = false
         }
         updateFadeControlsState(false)
-        seekBarSize.progress = (currentRadius - 2f).toInt()
         seekBarBrightness.progress = currentBrightness
         seekBarOnDur.progress = (currentOnDuration - 50L).toInt()
         seekBarOffDur.progress = (currentOffDuration - 1000L).toInt()
@@ -784,6 +859,110 @@ class MainActivity : AppCompatActivity() {
 
         previewDrawable?.updateConfig(currentColor, currentShapeType, currentRadius)
         previewImageView.invalidate()
+    }
+
+    private fun showAsciiCustomInputDialog() {
+        val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
+        val currentText = prefs.getString("pref_ascii_text", "♥") ?: "♥"
+
+        val container = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            gravity = Gravity.CENTER_HORIZONTAL
+            setPadding(32, 32, 32, 32)
+        }
+
+        val hintTv = TextView(this).apply {
+            text = getString(R.string.hint_ascii_input)
+            textSize = 13f
+            setTextColor(Color.GRAY)
+            setPadding(0, 0, 0, 24)
+        }
+
+        val inputEt = EditText(this).apply {
+            setText(currentText)
+            textSize = 22f
+            setTypeface(null, Typeface.BOLD)
+            setTextColor(currentColor)
+            gravity = Gravity.CENTER
+            setSingleLine(true)
+            filters = arrayOf(InputFilter.LengthFilter(15))
+            background = GradientDrawable().apply {
+                shape = GradientDrawable.RECTANGLE
+                setColor(Color.BLACK)
+                setStroke(3, Color.WHITE)
+                cornerRadius = 16f
+            }
+            setPadding(24, 24, 24, 24)
+        }
+
+        val presetScroll = HorizontalScrollView(this).apply {
+            isFillViewport = false
+            setPadding(0, 24, 0, 16)
+        }
+
+        val presetRow = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER_VERTICAL
+        }
+
+        val presets = listOf("♥", "★", "✚", "⚡", "✿", "✦", "◆", "●", "▲", "⊂(◉‿◉)つ", "(•‿•)")
+
+        presets.forEach { symbol ->
+            val chipBtn = TextView(this).apply {
+                text = symbol
+                textSize = 15f
+                setTextColor(Color.WHITE)
+                gravity = Gravity.CENTER
+                setPadding(20, 12, 20, 12)
+                background = GradientDrawable().apply {
+                    shape = GradientDrawable.RECTANGLE
+                    setColor(Color.parseColor("#333333"))
+                    setStroke(1, Color.GRAY)
+                    cornerRadius = 12f
+                }
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ).apply { setMargins(6, 0, 6, 0) }
+
+                setOnClickListener {
+                    it.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
+                    inputEt.setText(symbol)
+                    inputEt.setSelection(symbol.length)
+                }
+            }
+            presetRow.addView(chipBtn)
+        }
+
+        presetScroll.addView(presetRow)
+
+        container.addView(hintTv)
+        container.addView(inputEt)
+        container.addView(presetScroll)
+
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.title_ascii_input))
+            .setView(container)
+            .setPositiveButton("OK") { _, _ ->
+                val newText = inputEt.text.toString().ifEmpty { "♥" }
+                prefs.edit().putString("pref_ascii_text", newText).apply()
+                updateLivePreview()
+            }
+            .setNegativeButton("Zrušit", null)
+            .show()
+    }
+
+    private fun updateLivePreview() {
+        val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
+        val pillWidthRatio = prefs.getFloat("pref_pill_width_ratio", 2.5f)
+        val pillHeightRatio = prefs.getFloat("pref_pill_height_ratio", 1.5f)
+        val asciiText = prefs.getString("pref_ascii_text", "♥") ?: "♥"
+        previewDrawable?.setPillRatios(pillWidthRatio, pillHeightRatio)
+        previewDrawable?.setAsciiText(asciiText)
+        previewDrawable?.updateConfig(currentColor, currentShapeType, currentRadius)
+        if (::previewImageView.isInitialized) {
+            previewImageView.invalidate()
+        }
     }
 
     private fun createColorSquareDrawable(colorInt: Int, isSelected: Boolean): GradientDrawable {
@@ -802,23 +981,18 @@ class MainActivity : AppCompatActivity() {
         colorOptions.forEachIndexed { index, colorInt ->
             colorViews[index].background = createColorSquareDrawable(colorInt, colorInt == currentColor)
         }
+        updateLivePreview()
     }
 
     private fun updateShapeToggleUI() {
-        if (::iconDot.isInitialized && ::iconRing.isInitialized && ::iconPill.isInitialized && ::iconEmptyPill.isInitialized) {
+        if (::iconDot.isInitialized && ::iconRing.isInitialized && ::iconPill.isInitialized && ::iconEmptyPill.isInitialized && ::iconAscii.isInitialized) {
             iconDot.alpha = if (currentShapeType == 0) 1.0f else 0.35f
             iconRing.alpha = if (currentShapeType == 1) 1.0f else 0.35f
             iconPill.alpha = if (currentShapeType == 2) 1.0f else 0.35f
             iconEmptyPill.alpha = if (currentShapeType == 3) 1.0f else 0.35f
+            iconAscii.alpha = if (currentShapeType == 4) 1.0f else 0.35f
         }
-        val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
-        val pillWidthRatio = prefs.getFloat("pref_pill_width_ratio", 2.5f)
-        val pillHeightRatio = prefs.getFloat("pref_pill_height_ratio", 1.5f)
-        previewDrawable?.setPillRatios(pillWidthRatio, pillHeightRatio)
-        previewDrawable?.updateConfig(currentColor, currentShapeType, currentRadius)
-        if (::previewImageView.isInitialized) {
-            previewImageView.invalidate()
-        }
+        updateLivePreview()
     }
 
     private fun savePreferences() {
@@ -836,13 +1010,14 @@ class MainActivity : AppCompatActivity() {
             apply()
         }
 
-        previewDrawable?.updateConfig(currentColor, currentShapeType, currentRadius)
-        previewImageView.invalidate()
+        updateLivePreview()
     }
 
     override fun onResume() {
         super.onResume()
         val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
+        currentRadius = prefs.getFloat("pref_radius", 38f)
+        updateLivePreview()
         val appEnabled = prefs.getBoolean("pref_app_enabled", true)
         val notifGranted = isNotificationServiceEnabled()
         val overlayGranted = Settings.canDrawOverlays(this)
@@ -859,5 +1034,22 @@ class MainActivity : AppCompatActivity() {
         val cn = ComponentName(this, LedNotificationListener::class.java)
         val flat = Settings.Secure.getString(contentResolver, "enabled_notification_listeners")
         return flat != null && flat.contains(cn.flattenToString())
+    }
+
+    private fun isSystemAodEnabled(): Boolean {
+        val resolver = contentResolver
+        val secureKeys = listOf("doze_always_on", "aod_using", "aod_enable", "secure_gesture_aod_enable")
+        for (key in secureKeys) {
+            try {
+                if (Settings.Secure.getInt(resolver, key, 0) == 1) return true
+            } catch (_: Exception) {}
+        }
+        val systemKeys = listOf("aod_mode", "aod_mode_state", "aod_switch", "ambient_display_enabled")
+        for (key in systemKeys) {
+            try {
+                if (Settings.System.getInt(resolver, key, 0) != 0) return true
+            } catch (_: Exception) {}
+        }
+        return false
     }
 }

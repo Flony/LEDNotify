@@ -11,7 +11,8 @@
     <string name="label_on_dur">Doba svícení AODiode:</string>
     <string name="label_off_dur">Doba zhasnutí (Interval):</string>
     <string name="label_fade">Doba trvání přechodu (Fade):</string>
-    <string name="btn_test">TEST &amp; POZICE</string>
+    <string name="btn_test">TEST &amp; PŘIZPŮSOBENÍ</string>
+    <string name="pinch_size_hint">Velikost roztažením dvěma prsty</string>
     <string name="btn_burnout">Metoda ochrany proti vypálení</string>
     <string name="nav_permissions_lang">Spravovat oprávnění / Jazyk</string>
     <string name="perm_title">Nastavení oprávnění</string>
@@ -21,6 +22,7 @@
     <string name="btn_perm_oem">3. Další oprávnění</string>
     <string name="desc_perm_oem">💡 Pokud vám aplikace stále správně nefunguje nebo se nezobrazuje na zamčené obrazovce, zkuste povolit ještě tato systémová oprávnění (např. "Zobrazit na zamčené obrazovce", "Vyskakovací okna na pozadí", "Automatické spuštění").</string>
     <string name="status_oem_recommended">⚠️ %s (Doporučeno pro vaše zařízení)</string>
+    <string name="btn_about_github">🌐 O aplikaci / GitHub / Podpora</string>
     <string name="btn_continue">Pokračovat do aplikace</string>
     <string name="lang_title">Jazyk aplikace (Language)</string>
     <string name="lang_system">Systémový jazyk</string>
@@ -105,4 +107,11 @@
     <string name="tile_label_on">LED Notify: Zapnuto</string>
     <string name="tile_label_off">LED Notify: Vypnuto</string>
     <string name="title_disabled">LED Notify (Vypnuto)</string>
+    <string name="warning_system_aod_title">⚠️ Systémový AOD je aktivní</string>
+    <string name="warning_system_aod_desc">V nastavení telefonu máte zapnuté systémové Always-On hodiny. Pro nejlepší kompatibilitu, úsporu baterie nebo použití AODiode společně se systémovými hodinami můžete zapnout Průhledné pozadí v Pokročilém nastavení, nebo systémový AOD vypnout.</string>
+    <string name="btn_open_display_settings">Otevřít Nastavení displeje</string>
+    <string name="label_transparent_bg_title">Průhledné pozadí (pro Systémový AOD)</string>
+    <string name="desc_transparent_bg">Ponechá systémové hodiny a AOD viditelné na zamčené obrazovce a AODiode bude blikat přes ně. (Poznámka: Nemusí fungovat na všech zařízeních s hardwarovým AOD).</string>
+    <string name="title_ascii_input">Vlastní ASCII / Textový tvar</string>
+    <string name="hint_ascii_input">Zadejte symbol nebo text (např. ♥, ★, ⚡)</string>
 </resources>

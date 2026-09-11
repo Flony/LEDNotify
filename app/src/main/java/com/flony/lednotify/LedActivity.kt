@@ -6,10 +6,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.telephony.TelephonyManager
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -51,6 +53,18 @@ class LedActivity : AppCompatActivity() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent?.action == Intent.ACTION_SCREEN_OFF) {
                 finish()
+            }
+        }
+    }
+
+    // Receiver pro okamžité zhasnutí AODiode při příchozím/probíhajícím hovoru
+    private val phoneStateReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if (intent?.action == "android.intent.action.PHONE_STATE") {
+                val state = intent.getStringExtra(TelephonyManager.EXTRA_STATE)
+                if (state == TelephonyManager.EXTRA_STATE_RINGING || state == TelephonyManager.EXTRA_STATE_OFFHOOK) {
+                    finish()
+                }
             }
         }
     }
@@ -105,9 +119,17 @@ class LedActivity : AppCompatActivity() {
         val offDuration = intent.getLongExtra("AOD_OFF_DURATION", 3500L)
         val fadeDuration = if (isEco1Hz) 0L else intent.getLongExtra("AOD_FADE_DURATION", 2000L)
         val burnout = intent.getIntExtra("AOD_BURNOUT", prefs.getInt("pref_burnout_method", 2))
+        val isTransparentBg = intent.getBooleanExtra("AOD_TRANSPARENT_BG", prefs.getBoolean("pref_transparent_aod_bg", false))
+        val asciiText = intent.getStringExtra("AOD_ASCII_TEXT") ?: prefs.getString("pref_ascii_text", "♥") ?: "♥"
+
+        if (isTransparentBg) {
+            window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+        }
 
         ledView.setPillRatios(pillWidthRatio, pillHeightRatio)
-        ledView.setConfig(color, shapeType, radius, offsetX, offsetY, brightness, onDuration, offDuration, fadeDuration, burnout)
+        ledView.setAsciiText(asciiText)
+        ledView.setConfig(color, shapeType, radius, offsetX, offsetY, brightness, onDuration, offDuration, fadeDuration, burnout, isTransparentBg)
 
         // Poklepáním nebo klikem kdekoli se AODiode zhasne a aktivita ukončí
         ledView.setOnClickListener {
@@ -119,10 +141,12 @@ class LedActivity : AppCompatActivity() {
         val filter = IntentFilter("com.flony.lednotify.ACTION_CLEAR_LED")
         val userPresentFilter = IntentFilter(Intent.ACTION_USER_PRESENT)
         val screenOffFilter = IntentFilter(Intent.ACTION_SCREEN_OFF)
+        val phoneStateFilter = IntentFilter("android.intent.action.PHONE_STATE")
 
         ContextCompat.registerReceiver(this, dismissReceiver, filter, ContextCompat.RECEIVER_NOT_EXPORTED)
         ContextCompat.registerReceiver(this, userPresentReceiver, userPresentFilter, ContextCompat.RECEIVER_EXPORTED)
         ContextCompat.registerReceiver(this, screenOffReceiver, screenOffFilter, ContextCompat.RECEIVER_EXPORTED)
+        ContextCompat.registerReceiver(this, phoneStateReceiver, phoneStateFilter, ContextCompat.RECEIVER_EXPORTED)
     }
 
     private fun setupLockscreenFlags() {
@@ -212,6 +236,7 @@ class LedActivity : AppCompatActivity() {
             unregisterReceiver(dismissReceiver)
             unregisterReceiver(userPresentReceiver)
             unregisterReceiver(screenOffReceiver)
+            unregisterReceiver(phoneStateReceiver)
         } catch (_: Exception) {}
     }
 }

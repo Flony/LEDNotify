@@ -11,7 +11,8 @@
     <string name="label_on_dur">Duración de iluminación:</string>
     <string name="label_off_dur">Duración apagado (Intervalo):</string>
     <string name="label_fade">Duración de transición (Fade):</string>
-    <string name="btn_test">TEST &amp; POSICIÓN</string>
+    <string name="btn_test">PRUEBA Y PERSONALIZACIÓN</string>
+    <string name="pinch_size_hint">Ajustar tamaño pellizcando con dos dedos</string>
     <string name="btn_burnout">Método de protección contra quemado</string>
     <string name="nav_permissions_lang">Gestionar permisos / Idioma</string>
     <string name="perm_title">Configuración de permisos</string>
@@ -21,6 +22,7 @@
     <string name="btn_perm_oem">3. Permisos adicionales</string>
     <string name="desc_perm_oem">💡 Si la aplicación aún no funciona correctamente, intente habilitar estos permisos adicionales (p. ej., "Mostrar en pantalla de bloqueo", "Inicio automático").</string>
     <string name="status_oem_recommended">⚠️ %s (Recomendado para su dispositivo)</string>
+    <string name="btn_about_github">🌐 Acerca de / GitHub / Soporte</string>
     <string name="btn_continue">Continuar</string>
     <string name="lang_title">Idioma de la aplicación</string>
     <string name="lang_system">Idioma del sistema</string>
@@ -97,4 +99,11 @@
     <string name="tile_label_on">LED Notify: ACTIVADO</string>
     <string name="tile_label_off">LED Notify: DESACTIVADO</string>
     <string name="title_disabled">LED Notify (Desactivado)</string>
+    <string name="warning_system_aod_title">⚠️ AOD del sistema activo</string>
+    <string name="warning_system_aod_desc">El Always-On Display del sistema está activo. Para una mejor compatibilidad o para usar AODiode con el reloj del sistema, habilite Fondo transparente en Ajustes avanzados o desactive el AOD del sistema.</string>
+    <string name="btn_open_display_settings">Abrir ajustes de pantalla</string>
+    <string name="label_transparent_bg_title">Fondo transparente (para AOD del sistema)</string>
+    <string name="desc_transparent_bg">Mantiene visible el reloj del sistema y AOD en la pantalla de bloqueo mientras AODiode se ilumina sobre él. (Nota: Es posible que no funcione en todos los dispositivos con AOD por hardware).</string>
+    <string name="title_ascii_input">Forma ASCII / Texto personalizada</string>
+    <string name="hint_ascii_input">Ingrese un símbolo o texto (p. ej., ♥, ★, ⚡)</string>
 </resources>

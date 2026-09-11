@@ -11,7 +11,8 @@
     <string name="label_on_dur">Illumination Duration:</string>
     <string name="label_off_dur">Off Duration (Interval):</string>
     <string name="label_fade">Transition Duration (Fade):</string>
-    <string name="btn_test">TEST &amp; POSITION</string>
+    <string name="btn_test">TEST &amp; CUSTOMIZATION</string>
+    <string name="pinch_size_hint">Adjust size by stretching with two fingers</string>
     <string name="btn_burnout">Burnout Protection Method</string>
     <string name="nav_permissions_lang">Manage Permissions / Language</string>
     <string name="perm_title">Permission Settings</string>
@@ -21,6 +22,7 @@
     <string name="btn_perm_oem">3. Additional Permissions</string>
     <string name="desc_perm_oem">💡 If the app still does not work properly or fails to show on the lock screen, try enabling these additional system permissions (e.g. "Display on Lock screen", "Display pop-up windows in background", "Autostart").</string>
     <string name="status_oem_recommended">⚠️ %s (Recommended for your device)</string>
+    <string name="btn_about_github">🌐 About App / GitHub / Support</string>
     <string name="btn_continue">Continue to App</string>
     <string name="lang_title">App Language</string>
     <string name="lang_system">System Default</string>
@@ -105,4 +107,11 @@
     <string name="tile_label_on">LED Notify: ON</string>
     <string name="tile_label_off">LED Notify: OFF</string>
     <string name="title_disabled">LED Notify (Disabled)</string>
+    <string name="warning_system_aod_title">⚠️ System AOD is Active</string>
+    <string name="warning_system_aod_desc">System Always-On Display (clock) is active. For best compatibility or to use AODiode alongside system clock, enable Transparent Background in Advanced Settings or turn off System AOD.</string>
+    <string name="btn_open_display_settings">Open Display Settings</string>
+    <string name="label_transparent_bg_title">Transparent Background (for System AOD)</string>
+    <string name="desc_transparent_bg">Keeps system clock and AOD visible on lock screen while AODiode illuminates over it. (Note: May not work on all devices with hardware AOD).</string>
+    <string name="title_ascii_input">Custom ASCII / Text Shape</string>
+    <string name="hint_ascii_input">Enter symbol or text (e.g. ♥, ★, ⚡)</string>
 </resources>

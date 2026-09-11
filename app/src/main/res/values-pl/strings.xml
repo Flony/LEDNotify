@@ -11,7 +11,8 @@
     <string name="label_on_dur">Czas świecenia:</string>
     <string name="label_off_dur">Czas wyłączenia (Interwał):</string>
     <string name="label_fade">Czas przejścia (Fade):</string>
-    <string name="btn_test">TEST &amp; POZYCJA</string>
+    <string name="btn_test">TEST I DOSTOSOWANIE</string>
+    <string name="pinch_size_hint">Dostosuj rozmiar dwoma palcami</string>
     <string name="btn_burnout">Metoda ochrony przed wypaleniem</string>
     <string name="nav_permissions_lang">Zarządzaj uprawnieniami / Język</string>
     <string name="perm_title">Ustawienia uprawnień</string>
@@ -21,6 +22,7 @@
     <string name="btn_perm_oem">3. Dodatkowe uprawnienia</string>
     <string name="desc_perm_oem">💡 Jeśli aplikacja nadal nie działa prawidłowo, spróbuj włączyć te dodatkowe uprawnienia systemowe (np. "Wyświetlaj na ekranie blokady", "Autostart").</string>
     <string name="status_oem_recommended">⚠️ %s (Zalecane dla Twojego urządzenia)</string>
+    <string name="btn_about_github">🌐 O aplikacji / GitHub / Wsparcie</string>
     <string name="btn_continue">Przejdź do aplikacji</string>
     <string name="lang_title">Język aplikacji</string>
     <string name="lang_system">Język systemu</string>
@@ -97,4 +99,11 @@
     <string name="tile_label_on">LED Notify: WŁĄCZONE</string>
     <string name="tile_label_off">LED Notify: WYŁĄCZONE</string>
     <string name="title_disabled">LED Notify (Wyłączone)</string>
+    <string name="warning_system_aod_title">⚠️ Systemowy AOD jest aktywny</string>
+    <string name="warning_system_aod_desc">Systemowy Always-On Display jest włączony. Aby uzyskać najlepszą kompatybilność lub używać AODiode razem z zegarem systemowym, włącz Przezroczyste tło w Ustawieniach zaawansowanych lub wyłącz AOD systemowy.</string>
+    <string name="btn_open_display_settings">Otwórz ustawienia ekranu</string>
+    <string name="label_transparent_bg_title">Przezroczyste tło (dla systemowego AOD)</string>
+    <string name="desc_transparent_bg">Utrzymuje zegar systemowy i AOD widoczne na ekranie blokady, podczas gdy AODiode świeci nad nim. (Uwaga: Może nie działać na wszystkich urządzeniach z sprzętowym AOD).</string>
+    <string name="title_ascii_input">Własny kształt ASCII / Tekstowy</string>
+    <string name="hint_ascii_input">Wprowadź symbol lub tekst (np. ♥, ★, ⚡)</string>
 </resources>

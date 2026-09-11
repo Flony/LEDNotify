@@ -3,8 +3,8 @@
 # min_api: 27
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.2"}
-# pg_map_id: ed4fa53518d2b30fa87ef00c592c5713dbc27885a5afd06c9df69fe0c9c83085
-# pg_map_hash: SHA-256 ed4fa53518d2b30fa87ef00c592c5713dbc27885a5afd06c9df69fe0c9c83085
+# pg_map_id: a5170b111c359b4fe8997ce4b6bb5c26ec1401d79f641b6b46ea8f8f55a691e5
+# pg_map_hash: SHA-256 a5170b111c359b4fe8997ce4b6bb5c26ec1401d79f641b6b46ea8f8f55a691e5
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -39486,14 +39486,14 @@ com.flony.lednotify.AdvancedSettingsActivity$$ExternalSyntheticLambda6 -> k1:
     21:40:androidx.core.view.WindowInsetsCompat com.flony.lednotify.WelcomeActivity.onCreate$lambda$12(android.view.View,androidx.core.view.WindowInsetsCompat):111:111 -> b
     21:40:WindowInsetsCompat AdvancedSettingsActivity$$ExternalSyntheticLambda6.onApplyWindowInsets(android.view.View,WindowInsetsCompat):0 -> b
     41:42:WindowInsetsCompat AdvancedSettingsActivity$$ExternalSyntheticLambda6.onApplyWindowInsets(android.view.View,WindowInsetsCompat):0:0 -> b
-    43:45:androidx.core.view.WindowInsetsCompat com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$20(android.view.View,androidx.core.view.WindowInsetsCompat):0:0 -> b
+    43:45:androidx.core.view.WindowInsetsCompat com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$25(android.view.View,androidx.core.view.WindowInsetsCompat):0:0 -> b
     43:45:WindowInsetsCompat AdvancedSettingsActivity$$ExternalSyntheticLambda6.onApplyWindowInsets(android.view.View,WindowInsetsCompat):0 -> b
     46:51:androidx.core.graphics.Insets androidx.core.view.WindowInsetsCompat.getInsets(int):668:668 -> b
-    46:51:androidx.core.view.WindowInsetsCompat com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$20(android.view.View,androidx.core.view.WindowInsetsCompat):165 -> b
+    46:51:androidx.core.view.WindowInsetsCompat com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$25(android.view.View,androidx.core.view.WindowInsetsCompat):198 -> b
     46:51:WindowInsetsCompat AdvancedSettingsActivity$$ExternalSyntheticLambda6.onApplyWindowInsets(android.view.View,WindowInsetsCompat):0 -> b
-    52:54:androidx.core.view.WindowInsetsCompat com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$20(android.view.View,androidx.core.view.WindowInsetsCompat):165:165 -> b
+    52:54:androidx.core.view.WindowInsetsCompat com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$25(android.view.View,androidx.core.view.WindowInsetsCompat):198:198 -> b
     52:54:WindowInsetsCompat AdvancedSettingsActivity$$ExternalSyntheticLambda6.onApplyWindowInsets(android.view.View,WindowInsetsCompat):0 -> b
-    55:74:androidx.core.view.WindowInsetsCompat com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$20(android.view.View,androidx.core.view.WindowInsetsCompat):166:166 -> b
+    55:74:androidx.core.view.WindowInsetsCompat com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$25(android.view.View,androidx.core.view.WindowInsetsCompat):199:199 -> b
     55:74:WindowInsetsCompat AdvancedSettingsActivity$$ExternalSyntheticLambda6.onApplyWindowInsets(android.view.View,WindowInsetsCompat):0 -> b
     75:76:WindowInsetsCompat AdvancedSettingsActivity$$ExternalSyntheticLambda6.onApplyWindowInsets(android.view.View,WindowInsetsCompat):0:0 -> b
     77:79:androidx.core.view.WindowInsetsCompat com.flony.lednotify.MainActivity.onCreate$lambda$72(android.view.View,androidx.core.view.WindowInsetsCompat):0:0 -> b
@@ -40886,62 +40886,62 @@ com.flony.lednotify.LedActivity -> com.flony.lednotify.LedActivity:
     91:93:void onCreate(android.os.Bundle):84 -> onCreate
     94:96:void setupLockscreenFlags():131:131 -> onCreate
     94:96:void onCreate(android.os.Bundle):84 -> onCreate
-    97:105:void setupLockscreenFlags():139:139 -> onCreate
-    97:105:void onCreate(android.os.Bundle):84 -> onCreate
-    106:117:void onCreate(android.os.Bundle):86:86 -> onCreate
-    118:134:void setupBrightness(int):143:143 -> onCreate
-    118:134:void onCreate(android.os.Bundle):87 -> onCreate
-    135:140:void setupBrightness(int):144:144 -> onCreate
-    135:140:void onCreate(android.os.Bundle):87 -> onCreate
-    141:147:void setupBrightness(int):145:145 -> onCreate
-    141:147:void onCreate(android.os.Bundle):87 -> onCreate
-    148:154:void onCreate(android.os.Bundle):89:89 -> onCreate
-    155:160:void onCreate(android.os.Bundle):91:91 -> onCreate
-    161:179:void onCreate(android.os.Bundle):92:92 -> onCreate
-    180:187:void applyEco1HzRefreshRate(boolean):150:150 -> onCreate
-    180:187:void onCreate(android.os.Bundle):94 -> onCreate
-    188:194:void applyEco1HzRefreshRate(boolean):152:152 -> onCreate
-    188:194:void onCreate(android.os.Bundle):94 -> onCreate
-    195:208:void applyEco1HzRefreshRate(boolean):155:155 -> onCreate
-    195:208:void onCreate(android.os.Bundle):94 -> onCreate
-    209:219:void applyEco1HzRefreshRate(boolean):156:156 -> onCreate
-    209:219:void onCreate(android.os.Bundle):94 -> onCreate
-    220:229:void applyEco1HzRefreshRate(boolean):158:158 -> onCreate
-    220:229:void onCreate(android.os.Bundle):94 -> onCreate
-    230:248:void applyEco1HzRefreshRate(boolean):159:159 -> onCreate
-    230:248:void onCreate(android.os.Bundle):94 -> onCreate
-    249:258:void applyEco1HzRefreshRate(boolean):162:162 -> onCreate
-    249:258:void onCreate(android.os.Bundle):94 -> onCreate
-    259:269:void applyEco1HzRefreshRate(boolean):163:163 -> onCreate
-    259:269:void onCreate(android.os.Bundle):94 -> onCreate
-    270:276:void applyEco1HzRefreshRate(boolean):165:165 -> onCreate
-    270:276:void onCreate(android.os.Bundle):94 -> onCreate
-    277:283:void onCreate(android.os.Bundle):96:96 -> onCreate
-    284:299:void onCreate(android.os.Bundle):97:97 -> onCreate
-    300:307:void onCreate(android.os.Bundle):98:98 -> onCreate
-    308:315:void onCreate(android.os.Bundle):99:99 -> onCreate
-    316:327:void onCreate(android.os.Bundle):100:100 -> onCreate
-    328:339:void onCreate(android.os.Bundle):101:101 -> onCreate
-    340:349:void onCreate(android.os.Bundle):102:102 -> onCreate
-    350:359:void onCreate(android.os.Bundle):103:103 -> onCreate
-    360:371:void onCreate(android.os.Bundle):104:104 -> onCreate
-    372:390:void onCreate(android.os.Bundle):105:105 -> onCreate
-    391:403:void onCreate(android.os.Bundle):106:106 -> onCreate
-    404:420:void onCreate(android.os.Bundle):107:107 -> onCreate
-    421:430:void onCreate(android.os.Bundle):109:109 -> onCreate
-    431:437:void onCreate(android.os.Bundle):110:110 -> onCreate
-    438:449:void onCreate(android.os.Bundle):113:113 -> onCreate
-    450:456:void onCreate(android.os.Bundle):117:117 -> onCreate
-    457:463:void onCreate(android.os.Bundle):119:119 -> onCreate
-    464:470:void onCreate(android.os.Bundle):120:120 -> onCreate
-    471:477:void onCreate(android.os.Bundle):121:121 -> onCreate
-    478:483:void onCreate(android.os.Bundle):123:123 -> onCreate
-    484:488:void onCreate(android.os.Bundle):124:124 -> onCreate
-    489:494:void onCreate(android.os.Bundle):125:125 -> onCreate
-    495:498:void onCreate(android.os.Bundle):117:117 -> onCreate
-    499:502:void onCreate(android.os.Bundle):113:113 -> onCreate
-    503:506:void onCreate(android.os.Bundle):110:110 -> onCreate
-    507:510:void onCreate(android.os.Bundle):109:109 -> onCreate
+    97:106:void setupLockscreenFlags():134:134 -> onCreate
+    97:106:void onCreate(android.os.Bundle):84 -> onCreate
+    107:118:void onCreate(android.os.Bundle):86:86 -> onCreate
+    119:135:void setupBrightness(int):143:143 -> onCreate
+    119:135:void onCreate(android.os.Bundle):87 -> onCreate
+    136:141:void setupBrightness(int):144:144 -> onCreate
+    136:141:void onCreate(android.os.Bundle):87 -> onCreate
+    142:148:void setupBrightness(int):145:145 -> onCreate
+    142:148:void onCreate(android.os.Bundle):87 -> onCreate
+    149:155:void onCreate(android.os.Bundle):89:89 -> onCreate
+    156:161:void onCreate(android.os.Bundle):91:91 -> onCreate
+    162:180:void onCreate(android.os.Bundle):92:92 -> onCreate
+    181:188:void applyEco1HzRefreshRate(boolean):150:150 -> onCreate
+    181:188:void onCreate(android.os.Bundle):94 -> onCreate
+    189:195:void applyEco1HzRefreshRate(boolean):152:152 -> onCreate
+    189:195:void onCreate(android.os.Bundle):94 -> onCreate
+    196:209:void applyEco1HzRefreshRate(boolean):155:155 -> onCreate
+    196:209:void onCreate(android.os.Bundle):94 -> onCreate
+    210:220:void applyEco1HzRefreshRate(boolean):156:156 -> onCreate
+    210:220:void onCreate(android.os.Bundle):94 -> onCreate
+    221:230:void applyEco1HzRefreshRate(boolean):158:158 -> onCreate
+    221:230:void onCreate(android.os.Bundle):94 -> onCreate
+    231:249:void applyEco1HzRefreshRate(boolean):159:159 -> onCreate
+    231:249:void onCreate(android.os.Bundle):94 -> onCreate
+    250:259:void applyEco1HzRefreshRate(boolean):162:162 -> onCreate
+    250:259:void onCreate(android.os.Bundle):94 -> onCreate
+    260:270:void applyEco1HzRefreshRate(boolean):163:163 -> onCreate
+    260:270:void onCreate(android.os.Bundle):94 -> onCreate
+    271:277:void applyEco1HzRefreshRate(boolean):165:165 -> onCreate
+    271:277:void onCreate(android.os.Bundle):94 -> onCreate
+    278:284:void onCreate(android.os.Bundle):96:96 -> onCreate
+    285:300:void onCreate(android.os.Bundle):97:97 -> onCreate
+    301:308:void onCreate(android.os.Bundle):98:98 -> onCreate
+    309:316:void onCreate(android.os.Bundle):99:99 -> onCreate
+    317:328:void onCreate(android.os.Bundle):100:100 -> onCreate
+    329:340:void onCreate(android.os.Bundle):101:101 -> onCreate
+    341:350:void onCreate(android.os.Bundle):102:102 -> onCreate
+    351:360:void onCreate(android.os.Bundle):103:103 -> onCreate
+    361:372:void onCreate(android.os.Bundle):104:104 -> onCreate
+    373:391:void onCreate(android.os.Bundle):105:105 -> onCreate
+    392:404:void onCreate(android.os.Bundle):106:106 -> onCreate
+    405:421:void onCreate(android.os.Bundle):107:107 -> onCreate
+    422:431:void onCreate(android.os.Bundle):109:109 -> onCreate
+    432:438:void onCreate(android.os.Bundle):110:110 -> onCreate
+    439:450:void onCreate(android.os.Bundle):113:113 -> onCreate
+    451:457:void onCreate(android.os.Bundle):117:117 -> onCreate
+    458:464:void onCreate(android.os.Bundle):119:119 -> onCreate
+    465:471:void onCreate(android.os.Bundle):120:120 -> onCreate
+    472:478:void onCreate(android.os.Bundle):121:121 -> onCreate
+    479:484:void onCreate(android.os.Bundle):123:123 -> onCreate
+    485:489:void onCreate(android.os.Bundle):124:124 -> onCreate
+    490:495:void onCreate(android.os.Bundle):125:125 -> onCreate
+    496:499:void onCreate(android.os.Bundle):117:117 -> onCreate
+    500:503:void onCreate(android.os.Bundle):113:113 -> onCreate
+    504:507:void onCreate(android.os.Bundle):110:110 -> onCreate
+    508:511:void onCreate(android.os.Bundle):109:109 -> onCreate
     1:3:void onDestroy():210:210 -> onDestroy
     4:8:void onDestroy():212:212 -> onDestroy
     9:13:void onDestroy():213:213 -> onDestroy
@@ -42276,157 +42276,182 @@ com.flony.lednotify.MainActivity$onCreate$10$2 -> ue:
       # {"id":"com.android.tools.r8.synthesized"}
 com.flony.lednotify.PermissionSetupActivity -> com.flony.lednotify.PermissionSetupActivity:
 # {"id":"sourceFile","fileName":"PermissionSetupActivity.kt"}
+    int $r8$clinit -> A
+      # {"id":"com.android.tools.r8.synthesized"}
     android.widget.TextView statusNotification -> x
     android.widget.TextView statusOverlay -> y
-    int $r8$clinit -> z
-      # {"id":"com.android.tools.r8.synthesized"}
-    1:4:void <init>():24:24 -> <init>
-    3:5:void onCreate(android.os.Bundle):30:30 -> onCreate
-    6:10:void onCreate(android.os.Bundle):32:32 -> onCreate
-    11:20:void onCreate(android.os.Bundle):33:33 -> onCreate
-    21:23:void onCreate(android.os.Bundle):37:37 -> onCreate
-    24:28:void onCreate(android.os.Bundle):40:40 -> onCreate
-    29:33:void onCreate(android.os.Bundle):41:41 -> onCreate
-    34:36:void onCreate(android.os.Bundle):42:42 -> onCreate
-    37:44:void onCreate(android.os.Bundle):45:45 -> onCreate
-    45:53:void onCreate(android.os.Bundle):46:46 -> onCreate
-    54:57:void onCreate(android.os.Bundle):47:47 -> onCreate
-    58:63:void onCreate(android.os.Bundle):48:48 -> onCreate
-    64:66:void onCreate(android.os.Bundle):49:49 -> onCreate
-    67:74:void onCreate(android.os.Bundle):52:52 -> onCreate
-    75:83:void onCreate(android.os.Bundle):53:53 -> onCreate
-    84:88:void onCreate(android.os.Bundle):54:54 -> onCreate
-    89:91:void onCreate(android.os.Bundle):55:55 -> onCreate
-    92:98:void onCreate(android.os.Bundle):58:58 -> onCreate
-    99:101:void onCreate(android.os.Bundle):59:59 -> onCreate
-    102:103:void onCreate(android.os.Bundle):58:58 -> onCreate
-    104:111:void onCreate(android.os.Bundle):61:61 -> onCreate
-    112:118:void onCreate(android.os.Bundle):62:62 -> onCreate
-    119:126:void onCreate(android.os.Bundle):63:63 -> onCreate
-    127:136:void onCreate(android.os.Bundle):66:66 -> onCreate
-    137:139:void onCreate(android.os.Bundle):69:69 -> onCreate
-    140:142:void onCreate(android.os.Bundle):66:66 -> onCreate
-    143:147:void onCreate(android.os.Bundle):72:72 -> onCreate
-    148:150:void onCreate(android.os.Bundle):73:73 -> onCreate
-    151:152:void onCreate(android.os.Bundle):72:72 -> onCreate
-    153:160:void onCreate(android.os.Bundle):75:75 -> onCreate
-    161:167:void onCreate(android.os.Bundle):76:76 -> onCreate
-    168:175:void onCreate(android.os.Bundle):77:77 -> onCreate
-    176:180:void onCreate(android.os.Bundle):86:86 -> onCreate
-    181:183:void onCreate(android.os.Bundle):89:89 -> onCreate
-    184:186:void onCreate(android.os.Bundle):86:86 -> onCreate
-    187:194:void onCreate(android.os.Bundle):93:93 -> onCreate
-    195:203:void onCreate(android.os.Bundle):94:94 -> onCreate
-    204:206:void onCreate(android.os.Bundle):95:95 -> onCreate
-    207:211:void onCreate(android.os.Bundle):96:96 -> onCreate
-    212:217:void onCreate(android.os.Bundle):97:97 -> onCreate
-    218:221:void onCreate(android.os.Bundle):101:101 -> onCreate
-    222:233:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
-    222:233:void onCreate(android.os.Bundle):101 -> onCreate
-    234:237:void onCreate(android.os.Bundle):102:102 -> onCreate
-    238:247:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
-    238:247:void onCreate(android.os.Bundle):102 -> onCreate
-    248:251:void onCreate(android.os.Bundle):103:103 -> onCreate
-    252:261:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
-    252:261:void onCreate(android.os.Bundle):103 -> onCreate
-    262:265:void onCreate(android.os.Bundle):104:104 -> onCreate
-    266:275:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
-    266:275:void onCreate(android.os.Bundle):104 -> onCreate
-    276:279:void onCreate(android.os.Bundle):105:105 -> onCreate
-    280:289:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
-    280:289:void onCreate(android.os.Bundle):105 -> onCreate
-    290:293:void onCreate(android.os.Bundle):106:106 -> onCreate
-    294:303:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
-    294:303:void onCreate(android.os.Bundle):106 -> onCreate
-    304:307:void onCreate(android.os.Bundle):107:107 -> onCreate
-    308:319:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
-    308:319:void onCreate(android.os.Bundle):107 -> onCreate
-    320:323:void onCreate(android.os.Bundle):108:108 -> onCreate
-    324:335:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
-    324:335:void onCreate(android.os.Bundle):108 -> onCreate
-    336:339:void onCreate(android.os.Bundle):109:109 -> onCreate
-    340:358:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
-    340:358:void onCreate(android.os.Bundle):109 -> onCreate
-    359:362:void onCreate(android.os.Bundle):109:109 -> onCreate
-    363:366:void onCreate(android.os.Bundle):100:100 -> onCreate
-    367:372:void onCreate(android.os.Bundle):112:112 -> onCreate
-    373:375:void onCreate(android.os.Bundle):113:113 -> onCreate
-    376:381:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():821:821 -> onCreate
-    376:381:void onCreate(android.os.Bundle):116 -> onCreate
-    382:387:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():823:823 -> onCreate
-    382:387:void onCreate(android.os.Bundle):116 -> onCreate
-    388:391:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():825:825 -> onCreate
-    388:391:void onCreate(android.os.Bundle):116 -> onCreate
-    392:402:androidx.core.os.LocaleListCompat androidx.core.os.LocaleListCompat.wrap(android.os.LocaleList):57:57 -> onCreate
-    392:402:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():825 -> onCreate
-    392:402:void onCreate(android.os.Bundle):116 -> onCreate
-    403:407:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():829:829 -> onCreate
-    403:407:void onCreate(android.os.Bundle):116 -> onCreate
-    408:409:androidx.core.os.LocaleListCompat androidx.core.os.LocaleListCompat.getEmptyLocaleList():148:148 -> onCreate
-    408:409:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():835 -> onCreate
-    408:409:void onCreate(android.os.Bundle):116 -> onCreate
-    410:411:java.lang.String androidx.core.os.LocaleListCompat.toLanguageTags():128:128 -> onCreate
-    410:411:void onCreate(android.os.Bundle):116 -> onCreate
+    android.widget.Button btnOemPermission -> z
+    1:4:void <init>():25:25 -> <init>
+    3:5:void onCreate(android.os.Bundle):32:32 -> onCreate
+    6:10:void onCreate(android.os.Bundle):34:34 -> onCreate
+    11:20:void onCreate(android.os.Bundle):35:35 -> onCreate
+    21:23:void onCreate(android.os.Bundle):39:39 -> onCreate
+    24:28:void onCreate(android.os.Bundle):42:42 -> onCreate
+    29:33:void onCreate(android.os.Bundle):43:43 -> onCreate
+    34:36:void onCreate(android.os.Bundle):44:44 -> onCreate
+    37:44:void onCreate(android.os.Bundle):47:47 -> onCreate
+    45:53:void onCreate(android.os.Bundle):48:48 -> onCreate
+    54:57:void onCreate(android.os.Bundle):49:49 -> onCreate
+    58:63:void onCreate(android.os.Bundle):50:50 -> onCreate
+    64:66:void onCreate(android.os.Bundle):51:51 -> onCreate
+    67:74:void onCreate(android.os.Bundle):54:54 -> onCreate
+    75:83:void onCreate(android.os.Bundle):55:55 -> onCreate
+    84:88:void onCreate(android.os.Bundle):56:56 -> onCreate
+    89:91:void onCreate(android.os.Bundle):57:57 -> onCreate
+    92:98:void onCreate(android.os.Bundle):60:60 -> onCreate
+    99:101:void onCreate(android.os.Bundle):61:61 -> onCreate
+    102:103:void onCreate(android.os.Bundle):60:60 -> onCreate
+    104:111:void onCreate(android.os.Bundle):63:63 -> onCreate
+    112:118:void onCreate(android.os.Bundle):64:64 -> onCreate
+    119:126:void onCreate(android.os.Bundle):65:65 -> onCreate
+    127:136:void onCreate(android.os.Bundle):68:68 -> onCreate
+    137:139:void onCreate(android.os.Bundle):71:71 -> onCreate
+    140:142:void onCreate(android.os.Bundle):68:68 -> onCreate
+    143:147:void onCreate(android.os.Bundle):74:74 -> onCreate
+    148:150:void onCreate(android.os.Bundle):75:75 -> onCreate
+    151:152:void onCreate(android.os.Bundle):74:74 -> onCreate
+    153:160:void onCreate(android.os.Bundle):77:77 -> onCreate
+    161:167:void onCreate(android.os.Bundle):78:78 -> onCreate
+    168:175:void onCreate(android.os.Bundle):79:79 -> onCreate
+    176:180:void onCreate(android.os.Bundle):88:88 -> onCreate
+    181:183:void onCreate(android.os.Bundle):91:91 -> onCreate
+    184:186:void onCreate(android.os.Bundle):88:88 -> onCreate
+    187:194:void onCreate(android.os.Bundle):94:94 -> onCreate
+    195:203:void onCreate(android.os.Bundle):95:95 -> onCreate
+    204:206:void onCreate(android.os.Bundle):96:96 -> onCreate
+    207:209:void onCreate(android.os.Bundle):97:97 -> onCreate
+    210:217:void onCreate(android.os.Bundle):100:100 -> onCreate
+    218:224:void onCreate(android.os.Bundle):101:101 -> onCreate
+    225:233:void onCreate(android.os.Bundle):102:102 -> onCreate
+    234:238:void onCreate(android.os.Bundle):117:117 -> onCreate
+    239:241:void onCreate(android.os.Bundle):120:120 -> onCreate
+    242:244:void onCreate(android.os.Bundle):117:117 -> onCreate
+    245:246:void onCreate(android.os.Bundle):100:100 -> onCreate
+    247:254:void onCreate(android.os.Bundle):124:124 -> onCreate
+    255:263:void onCreate(android.os.Bundle):125:125 -> onCreate
+    264:268:void onCreate(android.os.Bundle):126:126 -> onCreate
+    269:273:void onCreate(android.os.Bundle):127:127 -> onCreate
+    274:279:void onCreate(android.os.Bundle):128:128 -> onCreate
+    280:283:void onCreate(android.os.Bundle):132:132 -> onCreate
+    284:293:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
+    284:293:void onCreate(android.os.Bundle):132 -> onCreate
+    294:297:void onCreate(android.os.Bundle):133:133 -> onCreate
+    298:307:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
+    298:307:void onCreate(android.os.Bundle):133 -> onCreate
+    308:311:void onCreate(android.os.Bundle):134:134 -> onCreate
+    312:321:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
+    312:321:void onCreate(android.os.Bundle):134 -> onCreate
+    322:325:void onCreate(android.os.Bundle):135:135 -> onCreate
+    326:335:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
+    326:335:void onCreate(android.os.Bundle):135 -> onCreate
+    336:339:void onCreate(android.os.Bundle):136:136 -> onCreate
+    340:349:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
+    340:349:void onCreate(android.os.Bundle):136 -> onCreate
+    350:353:void onCreate(android.os.Bundle):137:137 -> onCreate
+    354:365:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
+    354:365:void onCreate(android.os.Bundle):137 -> onCreate
+    366:369:void onCreate(android.os.Bundle):138:138 -> onCreate
+    370:381:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
+    370:381:void onCreate(android.os.Bundle):138 -> onCreate
+    382:385:void onCreate(android.os.Bundle):139:139 -> onCreate
+    386:397:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
+    386:397:void onCreate(android.os.Bundle):139 -> onCreate
+    398:401:void onCreate(android.os.Bundle):140:140 -> onCreate
+    402:420:kotlin.Pair kotlin.TuplesKt.to(java.lang.Object,java.lang.Object):43:43 -> onCreate
+    402:420:void onCreate(android.os.Bundle):140 -> onCreate
+    421:424:void onCreate(android.os.Bundle):140:140 -> onCreate
+    425:428:void onCreate(android.os.Bundle):131:131 -> onCreate
+    429:434:void onCreate(android.os.Bundle):143:143 -> onCreate
+    435:437:void onCreate(android.os.Bundle):144:144 -> onCreate
+    438:443:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():821:821 -> onCreate
+    438:443:void onCreate(android.os.Bundle):147 -> onCreate
+    444:449:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():823:823 -> onCreate
+    444:449:void onCreate(android.os.Bundle):147 -> onCreate
+    450:453:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():825:825 -> onCreate
+    450:453:void onCreate(android.os.Bundle):147 -> onCreate
+    454:464:androidx.core.os.LocaleListCompat androidx.core.os.LocaleListCompat.wrap(android.os.LocaleList):57:57 -> onCreate
+    454:464:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():825 -> onCreate
+    454:464:void onCreate(android.os.Bundle):147 -> onCreate
+    465:469:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():829:829 -> onCreate
+    465:469:void onCreate(android.os.Bundle):147 -> onCreate
+    470:471:androidx.core.os.LocaleListCompat androidx.core.os.LocaleListCompat.getEmptyLocaleList():148:148 -> onCreate
+    470:471:androidx.core.os.LocaleListCompat androidx.appcompat.app.AppCompatDelegate.getApplicationLocales():835 -> onCreate
+    470:471:void onCreate(android.os.Bundle):147 -> onCreate
+    472:473:java.lang.String androidx.core.os.LocaleListCompat.toLanguageTags():128:128 -> onCreate
+    472:473:void onCreate(android.os.Bundle):147 -> onCreate
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    412:413:java.lang.String androidx.core.os.LocaleListPlatformWrapper.toLanguageTags():77:77 -> onCreate
-    412:413:java.lang.String androidx.core.os.LocaleListCompat.toLanguageTags():128 -> onCreate
+    474:475:java.lang.String androidx.core.os.LocaleListPlatformWrapper.toLanguageTags():77:77 -> onCreate
+    474:475:java.lang.String androidx.core.os.LocaleListCompat.toLanguageTags():128 -> onCreate
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    412:413:void onCreate(android.os.Bundle):116 -> onCreate
-    414:417:java.lang.String androidx.core.os.LocaleListPlatformWrapper.toLanguageTags():77:77 -> onCreate
-    414:417:java.lang.String androidx.core.os.LocaleListCompat.toLanguageTags():128 -> onCreate
-    414:417:void onCreate(android.os.Bundle):116 -> onCreate
-    418:420:void onCreate(android.os.Bundle):116:116 -> onCreate
-    421:436:void kotlin.collections.CollectionsKt___CollectionsKt.forEach(java.lang.Iterable,kotlin.jvm.functions.Function1):1869:1869 -> onCreate
-    421:436:void onCreate(android.os.Bundle):118 -> onCreate
-    437:438:java.lang.Object kotlin.Pair.component1():0:0 -> onCreate
-    437:438:void onCreate(android.os.Bundle):188 -> onCreate
+    474:475:void onCreate(android.os.Bundle):147 -> onCreate
+    476:479:java.lang.String androidx.core.os.LocaleListPlatformWrapper.toLanguageTags():77:77 -> onCreate
+    476:479:java.lang.String androidx.core.os.LocaleListCompat.toLanguageTags():128 -> onCreate
+    476:479:void onCreate(android.os.Bundle):147 -> onCreate
+    480:482:void onCreate(android.os.Bundle):147:147 -> onCreate
+    483:498:void kotlin.collections.CollectionsKt___CollectionsKt.forEach(java.lang.Iterable,kotlin.jvm.functions.Function1):1869:1869 -> onCreate
+    483:498:void onCreate(android.os.Bundle):149 -> onCreate
+    499:500:java.lang.Object kotlin.Pair.component1():0:0 -> onCreate
+    499:500:void onCreate(android.os.Bundle):235 -> onCreate
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    439:443:void kotlin.collections.CollectionsKt___CollectionsKt.forEach(java.lang.Iterable,kotlin.jvm.functions.Function1):1869:1869 -> onCreate
-    439:443:void onCreate(android.os.Bundle):118 -> onCreate
-    444:445:java.lang.Object kotlin.Pair.component2():0:0 -> onCreate
-    444:445:void onCreate(android.os.Bundle):188 -> onCreate
-    446:447:void kotlin.collections.CollectionsKt___CollectionsKt.forEach(java.lang.Iterable,kotlin.jvm.functions.Function1):1869:1869 -> onCreate
-    446:447:void onCreate(android.os.Bundle):118 -> onCreate
-    448:452:void onCreate(android.os.Bundle):119:119 -> onCreate
-    453:459:void onCreate(android.os.Bundle):120:120 -> onCreate
-    460:462:void onCreate(android.os.Bundle):121:121 -> onCreate
-    463:465:void onCreate(android.os.Bundle):122:122 -> onCreate
-    466:488:void onCreate(android.os.Bundle):123:123 -> onCreate
-    489:492:void onCreate(android.os.Bundle):125:125 -> onCreate
-    493:500:void onCreate(android.os.Bundle):128:128 -> onCreate
-    501:508:void onCreate(android.os.Bundle):137:137 -> onCreate
-    509:515:void onCreate(android.os.Bundle):138:138 -> onCreate
-    516:524:void onCreate(android.os.Bundle):139:139 -> onCreate
-    525:536:void onCreate(android.os.Bundle):145:145 -> onCreate
-    537:539:void onCreate(android.os.Bundle):148:148 -> onCreate
-    540:542:void onCreate(android.os.Bundle):145:145 -> onCreate
-    543:545:void onCreate(android.os.Bundle):151:151 -> onCreate
-    546:548:void onCreate(android.os.Bundle):152:152 -> onCreate
-    549:555:void onCreate(android.os.Bundle):153:153 -> onCreate
-    556:558:void onCreate(android.os.Bundle):154:154 -> onCreate
-    559:565:void onCreate(android.os.Bundle):155:155 -> onCreate
-    566:568:void onCreate(android.os.Bundle):156:156 -> onCreate
-    569:571:void onCreate(android.os.Bundle):157:157 -> onCreate
-    572:574:void onCreate(android.os.Bundle):158:158 -> onCreate
-    575:577:void onCreate(android.os.Bundle):159:159 -> onCreate
-    578:580:void onCreate(android.os.Bundle):160:160 -> onCreate
-    581:583:void onCreate(android.os.Bundle):162:162 -> onCreate
-    584:592:void onCreate(android.os.Bundle):164:164 -> onCreate
-    593:596:void androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener(android.view.View,androidx.core.view.OnApplyWindowInsetsListener):2899:2899 -> onCreate
-    593:596:void onCreate(android.os.Bundle):164 -> onCreate
-    597:602:void onCreate(android.os.Bundle):155:155 -> onCreate
-    603:608:void onCreate(android.os.Bundle):153:153 -> onCreate
-    1:3:void onResume():172:172 -> onResume
-    4:10:boolean isNotificationServiceEnabled():181:181 -> onResume
-    4:10:void onResume():173 -> onResume
-    11:22:boolean isNotificationServiceEnabled():182:182 -> onResume
-    11:22:void onResume():173 -> onResume
-    23:38:boolean isNotificationServiceEnabled():183:183 -> onResume
-    23:38:void onResume():173 -> onResume
-    39:42:void onResume():174:174 -> onResume
-    43:64:void onResume():176:176 -> onResume
-    65:92:void onResume():177:177 -> onResume
-    93:98:void onResume():176:176 -> onResume
+    501:505:void kotlin.collections.CollectionsKt___CollectionsKt.forEach(java.lang.Iterable,kotlin.jvm.functions.Function1):1869:1869 -> onCreate
+    501:505:void onCreate(android.os.Bundle):149 -> onCreate
+    506:507:java.lang.Object kotlin.Pair.component2():0:0 -> onCreate
+    506:507:void onCreate(android.os.Bundle):235 -> onCreate
+    508:509:void kotlin.collections.CollectionsKt___CollectionsKt.forEach(java.lang.Iterable,kotlin.jvm.functions.Function1):1869:1869 -> onCreate
+    508:509:void onCreate(android.os.Bundle):149 -> onCreate
+    510:514:void onCreate(android.os.Bundle):150:150 -> onCreate
+    515:521:void onCreate(android.os.Bundle):151:151 -> onCreate
+    522:524:void onCreate(android.os.Bundle):152:152 -> onCreate
+    525:527:void onCreate(android.os.Bundle):153:153 -> onCreate
+    528:550:void onCreate(android.os.Bundle):154:154 -> onCreate
+    551:555:void onCreate(android.os.Bundle):156:156 -> onCreate
+    556:563:void onCreate(android.os.Bundle):159:159 -> onCreate
+    564:571:void onCreate(android.os.Bundle):168:168 -> onCreate
+    572:578:void onCreate(android.os.Bundle):169:169 -> onCreate
+    579:587:void onCreate(android.os.Bundle):170:170 -> onCreate
+    588:599:void onCreate(android.os.Bundle):176:176 -> onCreate
+    600:602:void onCreate(android.os.Bundle):179:179 -> onCreate
+    603:605:void onCreate(android.os.Bundle):176:176 -> onCreate
+    606:608:void onCreate(android.os.Bundle):182:182 -> onCreate
+    609:611:void onCreate(android.os.Bundle):183:183 -> onCreate
+    612:618:void onCreate(android.os.Bundle):184:184 -> onCreate
+    619:621:void onCreate(android.os.Bundle):185:185 -> onCreate
+    622:628:void onCreate(android.os.Bundle):186:186 -> onCreate
+    629:631:void onCreate(android.os.Bundle):187:187 -> onCreate
+    632:634:void onCreate(android.os.Bundle):188:188 -> onCreate
+    635:641:void onCreate(android.os.Bundle):189:189 -> onCreate
+    642:644:void onCreate(android.os.Bundle):190:190 -> onCreate
+    645:647:void onCreate(android.os.Bundle):191:191 -> onCreate
+    648:650:void onCreate(android.os.Bundle):192:192 -> onCreate
+    651:653:void onCreate(android.os.Bundle):193:193 -> onCreate
+    654:656:void onCreate(android.os.Bundle):195:195 -> onCreate
+    657:665:void onCreate(android.os.Bundle):197:197 -> onCreate
+    666:669:void androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener(android.view.View,androidx.core.view.OnApplyWindowInsetsListener):2899:2899 -> onCreate
+    666:669:void onCreate(android.os.Bundle):197 -> onCreate
+    670:679:void onCreate(android.os.Bundle):189:189 -> onCreate
+    680:687:void onCreate(android.os.Bundle):186:186 -> onCreate
+    688:693:void onCreate(android.os.Bundle):184:184 -> onCreate
+    1:3:void onResume():205:205 -> onResume
+    4:10:boolean isNotificationServiceEnabled():228:228 -> onResume
+    4:10:void onResume():206 -> onResume
+    11:22:boolean isNotificationServiceEnabled():229:229 -> onResume
+    11:22:void onResume():206 -> onResume
+    23:38:boolean isNotificationServiceEnabled():230:230 -> onResume
+    23:38:void onResume():206 -> onResume
+    39:42:void onResume():207:207 -> onResume
+    43:64:void onResume():209:209 -> onResume
+    65:85:void onResume():210:210 -> onResume
+    86:101:void onResume():212:212 -> onResume
+    102:114:void onResume():213:213 -> onResume
+    115:143:void onResume():214:214 -> onResume
+    144:167:void onResume():215:215 -> onResume
+    168:191:void onResume():216:216 -> onResume
+    192:209:void onResume():217:217 -> onResume
+    210:225:void onResume():218:218 -> onResume
+    226:252:void onResume():221:221 -> onResume
+    253:268:void onResume():223:223 -> onResume
+    269:274:void onResume():210:210 -> onResume
+    275:280:void onResume():209:209 -> onResume
 com.flony.lednotify.PermissionSetupActivity$$ExternalSyntheticLambda0 -> xg:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -42436,72 +42461,89 @@ com.flony.lednotify.PermissionSetupActivity$$ExternalSyntheticLambda0 -> xg:
       # {"id":"com.android.tools.r8.synthesized"}
     1:8:void PermissionSetupActivity$$ExternalSyntheticLambda0.<init>(com.flony.lednotify.PermissionSetupActivity,byte):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
-    10:16:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$19$lambda$17(com.flony.lednotify.PermissionSetupActivity,android.view.View):140:140 -> onClick
-    10:16:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    12:18:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$24$lambda$22(com.flony.lednotify.PermissionSetupActivity,android.view.View):171:171 -> onClick
+    12:18:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
-    17:30:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$19$lambda$17(com.flony.lednotify.PermissionSetupActivity,android.view.View):141:141 -> onClick
-    17:30:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
-    31:40:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$19$lambda$17(com.flony.lednotify.PermissionSetupActivity,android.view.View):142:142 -> onClick
-    31:40:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
-    41:44:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$19$lambda$17(com.flony.lednotify.PermissionSetupActivity,android.view.View):143:143 -> onClick
-    41:44:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
-    45:46:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0:0 -> onClick
-    47:52:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$11$lambda$9(com.flony.lednotify.PermissionSetupActivity,android.view.View):78:78 -> onClick
-    47:52:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
-    53:54:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$11$lambda$9(com.flony.lednotify.PermissionSetupActivity,android.view.View):79:79 -> onClick
-    53:54:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
-    55:76:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$11$lambda$9(com.flony.lednotify.PermissionSetupActivity,android.view.View):81:81 -> onClick
-    55:76:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
-    77:81:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$11$lambda$9(com.flony.lednotify.PermissionSetupActivity,android.view.View):79:79 -> onClick
-    77:81:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
-    82:85:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$11$lambda$9(com.flony.lednotify.PermissionSetupActivity,android.view.View):83:83 -> onClick
-    82:85:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
-    86:87:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0:0 -> onClick
-    88:98:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$7$lambda$5(com.flony.lednotify.PermissionSetupActivity,android.view.View):64:64 -> onClick
-    88:98:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
-com.flony.lednotify.PermissionSetupActivity$$ExternalSyntheticLambda2 -> yg:
+    19:32:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$24$lambda$22(com.flony.lednotify.PermissionSetupActivity,android.view.View):172:172 -> onClick
+    19:32:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    33:42:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$24$lambda$22(com.flony.lednotify.PermissionSetupActivity,android.view.View):173:173 -> onClick
+    33:42:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    43:46:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$24$lambda$22(com.flony.lednotify.PermissionSetupActivity,android.view.View):174:174 -> onClick
+    43:46:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    47:48:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0:0 -> onClick
+    49:55:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16$lambda$14(com.flony.lednotify.PermissionSetupActivity,android.view.View):103:103 -> onClick
+    49:55:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    56:62:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16$lambda$14(com.flony.lednotify.PermissionSetupActivity,android.view.View):104:104 -> onClick
+    56:62:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    63:71:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16$lambda$14(com.flony.lednotify.PermissionSetupActivity,android.view.View):105:105 -> onClick
+    63:71:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    72:75:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16$lambda$14(com.flony.lednotify.PermissionSetupActivity,android.view.View):108:108 -> onClick
+    72:75:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    76:77:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16$lambda$14(com.flony.lednotify.PermissionSetupActivity,android.view.View):110:110 -> onClick
+    76:77:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    78:97:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16$lambda$14(com.flony.lednotify.PermissionSetupActivity,android.view.View):112:112 -> onClick
+    78:97:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    98:102:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16$lambda$14(com.flony.lednotify.PermissionSetupActivity,android.view.View):110:110 -> onClick
+    98:102:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    103:106:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16$lambda$14(com.flony.lednotify.PermissionSetupActivity,android.view.View):114:114 -> onClick
+    103:106:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    107:108:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0:0 -> onClick
+    109:114:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$11$lambda$9(com.flony.lednotify.PermissionSetupActivity,android.view.View):80:80 -> onClick
+    109:114:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    115:116:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$11$lambda$9(com.flony.lednotify.PermissionSetupActivity,android.view.View):81:81 -> onClick
+    115:116:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    117:136:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$11$lambda$9(com.flony.lednotify.PermissionSetupActivity,android.view.View):83:83 -> onClick
+    117:136:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    137:141:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$11$lambda$9(com.flony.lednotify.PermissionSetupActivity,android.view.View):81:81 -> onClick
+    137:141:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    142:145:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$11$lambda$9(com.flony.lednotify.PermissionSetupActivity,android.view.View):85:85 -> onClick
+    142:145:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+    146:147:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0:0 -> onClick
+    148:158:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$7$lambda$5(com.flony.lednotify.PermissionSetupActivity,android.view.View):66:66 -> onClick
+    148:158:void PermissionSetupActivity$$ExternalSyntheticLambda0.onClick(android.view.View):0 -> onClick
+com.flony.lednotify.PermissionSetupActivity$$ExternalSyntheticLambda3 -> yg:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
-    com.flony.lednotify.PermissionSetupActivity com.flony.lednotify.PermissionSetupActivity$$InternalSyntheticLambda$1$efeac31d224e8d5d17f54fc34304d194fb6dd9bc4fdace1da5ad2927403e7ce3$2.f$0 -> a
+    com.flony.lednotify.PermissionSetupActivity com.flony.lednotify.PermissionSetupActivity$$InternalSyntheticLambda$1$efeac31d224e8d5d17f54fc34304d194fb6dd9bc4fdace1da5ad2927403e7ce3$3.f$0 -> a
       # {"id":"com.android.tools.r8.synthesized"}
-    1:6:void PermissionSetupActivity$$ExternalSyntheticLambda2.<init>(com.flony.lednotify.PermissionSetupActivity):0:0 -> <init>
+    1:6:void PermissionSetupActivity$$ExternalSyntheticLambda3.<init>(com.flony.lednotify.PermissionSetupActivity):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
-    6:8:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):129:129 -> onCheckedChanged
+    6:8:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):160:160 -> onCheckedChanged
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Landroid/widget/RadioGroup;I)V"}
-    9:17:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):130:130 -> onCheckedChanged
-    18:34:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):131:131 -> onCheckedChanged
-    35:41:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):132:132 -> onCheckedChanged
+    9:17:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):161:161 -> onCheckedChanged
+    18:34:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):162:162 -> onCheckedChanged
+    35:41:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):163:163 -> onCheckedChanged
     42:47:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):784:784 -> onCheckedChanged
-    42:47:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    42:47:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     48:53:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):787:787 -> onCheckedChanged
-    48:53:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    48:53:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     54:55:java.lang.String androidx.core.os.LocaleListCompat.toLanguageTags():128:128 -> onCheckedChanged
     54:55:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):790 -> onCheckedChanged
-    54:55:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    54:55:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     56:57:java.lang.String androidx.core.os.LocaleListPlatformWrapper.toLanguageTags():77:77 -> onCheckedChanged
     56:57:java.lang.String androidx.core.os.LocaleListCompat.toLanguageTags():128 -> onCheckedChanged
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     56:57:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):790 -> onCheckedChanged
-    56:57:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    56:57:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     58:61:java.lang.String androidx.core.os.LocaleListPlatformWrapper.toLanguageTags():77:77 -> onCheckedChanged
     58:61:java.lang.String androidx.core.os.LocaleListCompat.toLanguageTags():128 -> onCheckedChanged
     58:61:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):790 -> onCheckedChanged
-    58:61:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    58:61:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     62:65:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):790:790 -> onCheckedChanged
-    62:65:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    62:65:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     66:69:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):789:789 -> onCheckedChanged
-    66:69:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    66:69:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     70:77:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):797:797 -> onCheckedChanged
-    70:77:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    70:77:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     78:80:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):798:798 -> onCheckedChanged
-    78:80:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    78:80:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     81:82:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):799:799 -> onCheckedChanged
-    81:82:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    81:82:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     83:85:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):800:800 -> onCheckedChanged
-    83:85:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
+    83:85:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
     86:90:void androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat):801:801 -> onCheckedChanged
-    86:90:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):133 -> onCheckedChanged
-    91:94:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$16(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):134:134 -> onCheckedChanged
+    86:90:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):164 -> onCheckedChanged
+    91:94:void com.flony.lednotify.PermissionSetupActivity.onCreate$lambda$21(com.flony.lednotify.PermissionSetupActivity,android.widget.RadioGroup,int):165:165 -> onCheckedChanged
 com.flony.lednotify.PixelShiftAnimationView -> ah:
 # {"id":"sourceFile","fileName":"BurnoutProtectionActivity.kt"}
     android.graphics.Paint paint -> a

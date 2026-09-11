@@ -9,12 +9,16 @@
 ## ✨ Features
 
 - 🎯 **AODiode Camera Cutout Overlay**: Custom notification indicator positioned precisely around your front camera punch-hole.
-- 📐 **4 Customizable Shapes**:
+- 🎨 **5 Customizable Shapes & Custom ASCII/Text**:
   - **`(DOT)`**: Solid Filled Circle
   - **`(RING)`**: Hollow Stroke Circle
   - **`(PILL)`**: Solid Stadium / Pill
   - **`(EMPTY_PILL)`**: Hollow Stroke Stadium / Pill
-  - **Multi-Touch Gestures**: Adjust Pill width and height directly on screen using 2-finger pinch/stretch gestures or step-by-step arrows.
+  - **`(ASCII / TEXT)`**: Custom Symbols & Text (e.g. `♥`, `★`, `⚡`, `✿`, `✦`, Kaomoji `⊂(◉‿◉)つ`) with a retro input dialog & 1-tap quick symbol picker.
+  - **Unified Multi-Touch Gestures**: Adjust size and proportions for ALL shapes using 2-finger pinch/stretch gestures directly in Test & Customization mode.
+  - **Offscreen Indicator Arrow**: Subtle gray directional arrow (`◄`, `►`, `▲`, `▼`, `◤`, `◥`) showing where AODiode is located if accidentally moved offscreen.
+- 📞 **Smart Incoming Call Dismissal**: Instant millisecond dismissal of AODiode on incoming calls (`PHONE_STATE` & `CATEGORY_CALL`) so you can answer calls immediately without screen obstruction.
+- 🪟 **System AOD Smart Detection & Transparent Background**: Automatic detection of System Always-On Display with 1-time/permanent warning guidance and a Transparent Background mode to render AODiode over system clock/notifications.
 - ⚡ **True 1Hz ECO Mode (LTPO Hardware Locking)**: For devices with variable refresh rate LTPO displays (like Nothing Phone (2), Pixel 9, Galaxy S24), locks display hardware refresh rate strictly to **1 Hz** during illumination for absolute minimum power consumption.
 - 🔴 **Power-Efficient Default Color**: Uses pure **Red (`#FF0000`)** by default — only red subpixels illuminate on AMOLED displays, drawing up to 75% less power than white or blue.
 - 🎨 **Per-App Custom Colors**: Assign distinct colors to specific applications or system events (missed calls, SMS). Unconfigured apps automatically follow your global color setting.

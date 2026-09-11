@@ -1,10 +1,12 @@
 package com.flony.lednotify
 
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Gravity
 import android.view.HapticFeedbackConstants
 import android.view.ViewGroup
@@ -34,6 +36,7 @@ class AdvancedSettingsActivity : AppCompatActivity() {
     private var lowBatteryPercent = 20
 
     private var isChargingLedEnabled = false
+    private var isTransparentBg = false
 
     private lateinit var tvTimeoutValue: TextView
     private lateinit var seekBarTimeout: SeekBar
@@ -66,6 +69,7 @@ class AdvancedSettingsActivity : AppCompatActivity() {
         lowBatteryPercent = prefs.getInt("pref_low_battery_percent", 20)
 
         isChargingLedEnabled = prefs.getBoolean("pref_charging_led_enabled", false)
+        isTransparentBg = prefs.getBoolean("pref_transparent_aod_bg", isSystemAodEnabled())
 
         val scrollView = ScrollView(this).apply {
             layoutParams = ViewGroup.LayoutParams(
@@ -87,6 +91,53 @@ class AdvancedSettingsActivity : AppCompatActivity() {
             setPadding(0, 0, 0, 32)
         }
         layout.addView(mainTitle)
+
+        // Permanent Warning Card in Advanced Settings if System AOD is Enabled
+        if (isSystemAodEnabled()) {
+            val isNight = (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+            val cardBg = if (isNight) Color.parseColor("#33FF9800") else Color.parseColor("#1AFF9800")
+
+            val systemAodCard = LinearLayout(this).apply {
+                orientation = LinearLayout.VERTICAL
+                setPadding(32, 24, 32, 24)
+                setBackgroundColor(cardBg)
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ).apply { setMargins(0, 0, 0, 32) }
+            }
+
+            val tvWarningTitle = TextView(this).apply {
+                text = getString(R.string.warning_system_aod_title)
+                textSize = 15f
+                setTypeface(null, Typeface.BOLD)
+                setTextColor(Color.parseColor("#FFA500"))
+                setPadding(0, 0, 0, 8)
+            }
+
+            val tvWarningDesc = TextView(this).apply {
+                text = getString(R.string.warning_system_aod_desc)
+                textSize = 12f
+                setPadding(0, 0, 0, 12)
+            }
+
+            val btnOpenDisplaySettings = Button(this).apply {
+                text = getString(R.string.btn_open_display_settings)
+                textSize = 13f
+                setOnClickListener {
+                    it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                    try {
+                        startActivity(Intent(Settings.ACTION_DISPLAY_SETTINGS))
+                    } catch (_: Exception) {}
+                }
+            }
+
+            systemAodCard.addView(tvWarningTitle)
+            systemAodCard.addView(tvWarningDesc)
+            systemAodCard.addView(btnOpenDisplaySettings)
+
+            layout.addView(systemAodCard)
+        }
 
         // ==========================================
         // 1. AODiode Timeout Setting
@@ -386,6 +437,47 @@ class AdvancedSettingsActivity : AppCompatActivity() {
         sectionCharging.addView(descCharging)
         layout.addView(sectionCharging)
 
+        // ==========================================
+        // 5. Transparent Background Setting
+        // ==========================================
+        val sectionTransparent = createCardContainer()
+
+        val transparentHeaderRow = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER_VERTICAL
+            setPadding(0, 0, 0, 8)
+        }
+
+        val tvTransparentHeader = TextView(this).apply {
+            text = getString(R.string.label_transparent_bg_title)
+            textSize = 18f
+            setTypeface(null, Typeface.BOLD)
+            layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
+        }
+
+        val switchTransparentBg = SwitchCompat(this).apply {
+            isChecked = isTransparentBg
+            setOnCheckedChangeListener { _, isChecked ->
+                performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
+                isTransparentBg = isChecked
+                savePreferences()
+            }
+        }
+
+        transparentHeaderRow.addView(tvTransparentHeader)
+        transparentHeaderRow.addView(switchTransparentBg)
+
+        val descTransparent = TextView(this).apply {
+            text = getString(R.string.desc_transparent_bg)
+            textSize = 12f
+            setTextColor(Color.GRAY)
+            setPadding(0, 4, 0, 0)
+        }
+
+        sectionTransparent.addView(transparentHeaderRow)
+        sectionTransparent.addView(descTransparent)
+        layout.addView(sectionTransparent)
+
         scrollView.addView(layout)
         setContentView(scrollView)
 
@@ -453,6 +545,23 @@ class AdvancedSettingsActivity : AppCompatActivity() {
         seekBarLowBattery.alpha = alpha
     }
 
+    private fun isSystemAodEnabled(): Boolean {
+        val resolver = contentResolver
+        val secureKeys = listOf("doze_always_on", "aod_using", "aod_enable", "secure_gesture_aod_enable")
+        for (key in secureKeys) {
+            try {
+                if (Settings.Secure.getInt(resolver, key, 0) == 1) return true
+            } catch (_: Exception) {}
+        }
+        val systemKeys = listOf("aod_mode", "aod_mode_state", "aod_switch", "ambient_display_enabled")
+        for (key in systemKeys) {
+            try {
+                if (Settings.System.getInt(resolver, key, 0) != 0) return true
+            } catch (_: Exception) {}
+        }
+        return false
+    }
+
     private fun savePreferences() {
         prefs.edit().apply {
             putInt("pref_aodiode_timeout_min", timeoutMin)
@@ -465,6 +574,7 @@ class AdvancedSettingsActivity : AppCompatActivity() {
             putBoolean("pref_low_battery_enabled", isLowBatteryEnabled)
             putInt("pref_low_battery_percent", lowBatteryPercent)
             putBoolean("pref_charging_led_enabled", isChargingLedEnabled)
+            putBoolean("pref_transparent_aod_bg", isTransparentBg)
             apply()
         }
     }
