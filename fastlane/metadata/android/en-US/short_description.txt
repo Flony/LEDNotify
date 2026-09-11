@@ -1,0 +1,1 @@
+AODiode notification LED & charging indicator for AMOLED screens.

@@ -1,0 +1,11 @@
+LED Notify is a lightweight, privacy-first, zero-battery-drain notification LED indicator designed for Android devices with AMOLED / OLED displays (especially those with front camera punch-hole cutouts).
+
+Features:
+• 5 Customizable Shapes (Dot, Ring, Pill, Empty Pill & Custom ASCII / Text Symbols)
+• Unified 2-finger multi-touch gestures for size & shape adjustments
+• Offscreen Indicator Arrow showing exact direction if AODiode is moved offscreen
+• Smart Incoming Call Dismissal for instant unobstructed call answering
+• True 1Hz ECO Mode (LTPO Hardware Locking)
+• Per-App Custom Colors & Whitelist/Blacklist Filter
+• Advanced Settings: Timeout, Quiet Hours / DND, Low Battery Auto-Disable & Charging Indicator
+• 100% Offline & Private (Zero Internet permission)

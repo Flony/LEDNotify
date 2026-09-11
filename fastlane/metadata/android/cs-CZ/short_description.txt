@@ -1,0 +1,1 @@
+Notifikační LED indikátor a ukazatel nabíjení pro AMOLED displeje.

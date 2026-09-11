@@ -1,0 +1,11 @@
+LED Notify je lehký, na soukromí zaměřený notifikační LED indikátor navržený pro Android zařízení s AMOLED/OLED displeji (především pro průstřely předního fotoaparátu).
+
+Klíčové funkce:
+• 5 přizpůsobitelných tvarů (Tečka, Prstenec, Pilulka, Prázdná pilulka a Vlastní ASCII / Textové symboly)
+• Gestové tvarování a měnění velikosti 2 prsty
+• Ukazovací šipka u okraje obrazovky, pokud je AODiode posunuta mimo viditelnou plochu
+• Okamžité zhasnutí při příchozím hovoru pro snadné přijetí telefonu
+• Úsporný Režim ECO 1Hz (LTPO)
+• Vlastní barvy pro jednotlivé aplikace a Whitelist/Blacklist filtr
+• Pokročilé nastavení: Timeout, Tiché hodiny / DND, Automatické vypnutí při slabé baterii a Ukazatel nabíjení
+• 100% Offline a bezpečné (zcela bez oprávnění k internetu)
