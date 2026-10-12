@@ -1,7 +1,9 @@
 package com.flony.lednotify
 
+import android.app.ActivityOptions
 import android.app.Notification
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -12,6 +14,7 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.BatteryManager
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.PowerManager
@@ -58,6 +61,9 @@ class LedNotificationListener : NotificationListenerService() {
 
     private val phoneStateReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
+            val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
+            if (!prefs.getBoolean("pref_app_enabled", true)) return
+
             val state = intent?.getStringExtra(TelephonyManager.EXTRA_STATE)
             if (state == TelephonyManager.EXTRA_STATE_RINGING || state == TelephonyManager.EXTRA_STATE_OFFHOOK) {
                 sendBroadcast(Intent("com.flony.lednotify.ACTION_CLEAR_LED"))
@@ -88,7 +94,12 @@ class LedNotificationListener : NotificationListenerService() {
     override fun onNotificationPosted(sbn: StatusBarNotification?) {
         sbn ?: return
 
-        // 1. Rychlé ignorování probíhajících/trvalých notifikací (přehrávač hudby, stahování)
+        // 1. NEJRYCHLEJŠÍ KONTROLA: Pokud je aplikace vypnutá v nastavení/liště, IHNED skončit (0 ms)!
+        val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
+        val appEnabled = prefs.getBoolean("pref_app_enabled", true)
+        if (!appEnabled) return
+
+        // 2. Rychlé ignorování probíhajících/trvalých notifikací (přehrávač hudby, stahování)
         if (sbn.isOngoing) return
 
         val flags = sbn.notification.flags
@@ -103,14 +114,9 @@ class LedNotificationListener : NotificationListenerService() {
             return
         }
 
-        // 2. Okamžitý návrat, pokud je obrazovka aktivní (uživatel mobil používá)
+        // 3. Okamžitý návrat, pokud je obrazovka aktivní (uživatel mobil používá)
         val pm = getSystemService(POWER_SERVICE) as PowerManager
         if (pm.isInteractive) return
-
-        // 3. Kontrola zapnutí aplikace
-        val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
-        val appEnabled = prefs.getBoolean("pref_app_enabled", true)
-        if (!appEnabled) return
 
         // 4. Kontrola Whitelistu / Blacklistu
         val blacklistedPkgs = prefs.getStringSet("pref_blacklisted_pkgs", emptySet()) ?: emptySet()
@@ -253,7 +259,7 @@ class LedNotificationListener : NotificationListenerService() {
         val asciiText = prefs.getString("pref_ascii_text", "♥") ?: "♥"
 
         val intent = Intent(this, LedActivity::class.java).apply {
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_REORDER_TO_FRONT or Intent.FLAG_ACTIVITY_CLEAR_TOP)
             putExtra("AOD_COLOR", ledColor)
             putExtra("AOD_SHAPE_TYPE", shapeType)
             putExtra("AOD_RADIUS", radius)
@@ -268,7 +274,26 @@ class LedNotificationListener : NotificationListenerService() {
             putExtra("AOD_TRANSPARENT_BG", isTransparentBg)
             putExtra("AOD_ASCII_TEXT", asciiText)
         }
-        startActivity(intent)
+
+        val pendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                val options = ActivityOptions.makeBasic()
+                @Suppress("NewApi")
+                options.setPendingIntentBackgroundActivityStartMode(ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED)
+                pendingIntent.send(this, 0, null, null, null, null, options.toBundle())
+            } else {
+                pendingIntent.send()
+            }
+        } catch (_: Exception) {
+            startActivity(intent)
+        }
     }
 
     private fun isSystemAodEnabled(): Boolean {
@@ -289,6 +314,9 @@ class LedNotificationListener : NotificationListenerService() {
     }
 
     override fun onNotificationRemoved(sbn: StatusBarNotification?) {
+        val prefs = getSharedPreferences("led_notify_prefs", MODE_PRIVATE)
+        if (!prefs.getBoolean("pref_app_enabled", true)) return
+
         // Pokud uživatel smaže notifikaci na jiném zařízení / hodinkách, ukončí se LedActivity
         val active = activeNotifications?.filter { !it.isOngoing } ?: emptyList()
         if (active.isEmpty()) {
